@@ -2,7 +2,6 @@ import { Hero } from "@/components/Hero";
 import { ImmersiveExperience } from "@/components/ImmersiveExperience";
 import { About } from "@/components/About";
 import { Experiences } from "@/components/Experiences";
-import { Rooms } from "@/components/Rooms";
 import { ParallaxQuote } from "@/components/ParallaxQuote";
 import { Gallery } from "@/components/Gallery";
 import { Testimonials } from "@/components/Testimonials";
@@ -15,7 +14,6 @@ export default function Home() {
       <ImmersiveExperience />
       <About />
       <Experiences />
-      <Rooms />
       <ParallaxQuote />
       <Gallery />
       <Testimonials />
