@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, Users, Maximize, Wifi, Wind, Tv, Coffee, Bath, MessageCircle, Star, CheckCircle } from 'lucide-react';
-import { rooms } from '../page';
+import { rooms } from '@/lib/rooms';
 
 export default function RoomDetailPage() {
   const { id } = useParams<{ id: string }>();
