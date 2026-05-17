@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import { notFound, useParams } from 'next/navigation';
 import { motion } from 'motion/react';
 import Image from 'next/image';
@@ -7,8 +8,8 @@ import Link from 'next/link';
 import { ArrowLeft, BedDouble, Eye, Maximize, Users, Wifi, Wind, Leaf, Bath, Volume2, Coffee, Waves, Mountain, CheckCircle, MessageCircle, ExternalLink } from 'lucide-react';
 import { rooms } from '@/lib/rooms';
 
-function getAmenityIcon(amenity: string) {
-  const map: Record<string, JSX.Element> = {
+function getAmenityIcon(amenity: string): React.ReactElement | null {
+  const map: Record<string, React.ReactElement> = {
     'Free WiFi': <Wifi className="w-5 h-5" />,
     'Air Conditioning': <Wind className="w-5 h-5" />,
     'Garden View': <Leaf className="w-5 h-5" />,
