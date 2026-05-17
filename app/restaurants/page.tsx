@@ -101,7 +101,7 @@ export default function RestaurantsPage() {
                     <span className="text-brand text-[9px] uppercase tracking-[0.35em] font-semibold">{venue.type}</span>
                   </div>
                   <div className="absolute top-5 left-5">
-                    <span className="px-3 py-1.5 bg-brand text-black text-[9px] uppercase tracking-[0.35em] font-semibold">{venue.type}</span>
+                    <span className="px-3 py-1.5 bg-brand text-[#3b3439] text-[9px] uppercase tracking-[0.35em] font-semibold rounded-full">{venue.type}</span>
                   </div>
                 </div>
 
@@ -123,7 +123,7 @@ export default function RestaurantsPage() {
 
                   <div className="flex flex-wrap gap-2">
                     {venue.highlights.map((h) => (
-                      <span key={h} className="px-2.5 py-1 border border-charcoal/12 text-[9px] text-charcoal/45 uppercase tracking-wide font-light">{h}</span>
+                      <span key={h} className="px-2.5 py-1 border border-charcoal/12 text-[9px] text-charcoal/45 uppercase tracking-wide font-light rounded-full">{h}</span>
                     ))}
                   </div>
                 </div>
@@ -145,7 +145,7 @@ export default function RestaurantsPage() {
             href="https://wa.me/919847000000?text=Hi%2C%20I'd%20like%20to%20reserve%20a%20table%20at%20Into%20the%20Wild."
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-brand text-black text-[10px] uppercase tracking-[0.35em] font-semibold hover:bg-brand-light transition-colors"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-brand text-[#3b3439] text-[10px] uppercase tracking-[0.35em] font-semibold hover:bg-brand-light transition-colors rounded-full"
           >
             <Phone className="w-3.5 h-3.5" /> Contact Concierge
           </a>

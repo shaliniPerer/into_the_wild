@@ -6,30 +6,36 @@ import Image from 'next/image';
 import { X, Maximize2, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const images = [
-  { src: '/20251016_142529.jpg', caption: 'Garden Suite Terrace' },
-  { src: '/20251016_141228.jpg', caption: 'Deluxe Room Interior' },
-  { src: '/20251016_142613.jpg', caption: 'Room Details' },
-  { src: '/20251016_143023.jpg', caption: 'Outdoor Seating' },
-  { src: '/20251016_141102.jpg', caption: 'Garden View' },
-  { src: '/20251016_141206.jpg', caption: 'Forest Walkway' },
-  { src: '/20251016_123549.jpg', caption: 'Superior Room' },
-  { src: '/20251016_122855.jpg', caption: 'Room Entrance' },
-  { src: '/20251016_124246.jpg', caption: 'Bathroom Details' },
-  { src: '/20251016_124422.jpg', caption: 'Window Light' },
-  { src: '/20251016_125447.jpg', caption: 'Lounge Area' },
-  { src: '/20251023_135406.jpg', caption: 'Superior King Room' },
-  { src: '/20251023_134530.jpg', caption: 'King Bedroom' },
-  { src: '/20251023_143021.jpg', caption: 'Private Balcony' },
-  { src: '/20251023_143215.jpg', caption: 'Treetop View' },
-  { src: '/20251023_134155.jpg', caption: 'Morning Light' },
-  { src: '/20251016_144553.jpg', caption: 'The Suite' },
-  { src: '/20251016_151607.jpg', caption: 'Suite Living Area' },
-  { src: '/20251016_153103.jpg', caption: 'Suite Bathroom' },
-  { src: '/20251016_153610.jpg', caption: 'Pool Deck' },
-  { src: '/20251016_144821.jpg', caption: 'Suite Terrace' },
-  { src: '/home.jpeg', caption: 'Resort Overview' },
-  { src: '/hero2.jpeg', caption: 'Resort Grounds' },
-  { src: '/hero3.jpeg', caption: 'Into the Wild' },
+  { src: '/images/DJI_20260504173915_0079_D_1778177359348.jpg', caption: 'Aerial View',         aspect: 'aspect-video'  },
+  { src: '/20251016_141228.jpg',   caption: 'Deluxe Room Interior',   aspect: 'aspect-[3/4]'  },
+  { src: '/20251016_142613.jpg',   caption: 'Room Details',           aspect: 'aspect-square' },
+  { src: '/20251016_142529.jpg',   caption: 'Garden Suite Terrace',   aspect: 'aspect-[4/3]'  },
+  { src: '/20251016_141102.jpg',   caption: 'Garden View',            aspect: 'aspect-[3/4]'  },
+  { src: '/20251023_135406.jpg',   caption: 'Triple Room',            aspect: 'aspect-[3/4]'  },
+  { src: '/20251016_143023.jpg',   caption: 'Outdoor Seating',        aspect: 'aspect-[4/3]'  },
+  { src: '/20251016_141206.jpg',   caption: 'Forest Walkway',         aspect: 'aspect-[3/4]'  },
+  { src: '/20251016_123549.jpg',   caption: 'Superior Room',          aspect: 'aspect-[4/3]'  },
+  { src: '/20251016_124246.jpg',   caption: 'Bathroom Details',       aspect: 'aspect-[3/4]'  },
+  { src: '/20251016_122855.jpg',   caption: 'Room Entrance',          aspect: 'aspect-square' },
+  { src: '/20251023_134530.jpg',   caption: 'King Bedroom',           aspect: 'aspect-[4/3]'  },
+  { src: '/20251016_124422.jpg',   caption: 'Window Light',           aspect: 'aspect-[4/3]'  },
+  { src: '/20251023_143021.jpg',   caption: 'Private Balcony',        aspect: 'aspect-[3/4]'  },
+  { src: '/20251016_125447.jpg',   caption: 'Lounge Area',            aspect: 'aspect-square' },
+  { src: '/20251023_143215.jpg',   caption: 'Treetop View',           aspect: 'aspect-[3/4]'  },
+  { src: '/20251023_134155.jpg',   caption: 'Morning Light',          aspect: 'aspect-[4/3]'  },
+  { src: '/20251016_144553.jpg',   caption: 'The Suite',              aspect: 'aspect-[4/3]'  },
+  { src: '/20251016_151607.jpg',   caption: 'Suite Living Area',      aspect: 'aspect-[3/4]'  },
+  { src: '/images/DSC00747.jpg',   caption: 'Poolside',               aspect: 'aspect-[4/3]'  },
+  { src: '/20251016_153610.jpg',   caption: 'Pool Deck',              aspect: 'aspect-video'  },
+  { src: '/20251016_153103.jpg',   caption: 'Suite Bathroom',         aspect: 'aspect-square' },
+  { src: '/20251016_144821.jpg',   caption: 'Suite Terrace',          aspect: 'aspect-[4/3]'  },
+  { src: '/images/DSC00568-HDR.jpg', caption: 'Nature Views',         aspect: 'aspect-video'  },
+  { src: '/20251023_141902.jpg',   caption: 'Wildlife Encounter',     aspect: 'aspect-[4/3]'  },
+  { src: '/hero2.jpeg',            caption: 'Resort Grounds',         aspect: 'aspect-[4/3]'  },
+  { src: '/about.jpeg',            caption: 'Serene Nature',          aspect: 'aspect-[3/4]'  },
+  { src: '/hero3.jpeg',            caption: 'Into the Wild',          aspect: 'aspect-[3/4]'  },
+  { src: '/20251016_153307.jpg',   caption: 'Evening Light',          aspect: 'aspect-[4/3]'  },
+  { src: '/home.jpeg',             caption: 'Resort Overview',        aspect: 'aspect-video'  },
 ];
 
 export default function GalleryPage() {
@@ -59,39 +65,49 @@ export default function GalleryPage() {
             transition={{ delay: 0.2 }}
             className="font-serif text-5xl md:text-7xl text-white font-light mb-6"
           >
-            Gallery
+            Photo Gallery
           </motion.h1>
           <div className="w-24 h-[2px] bg-brand mx-auto" />
         </div>
       </section>
 
-      {/* Grid */}
+      {/* Masonry Grid */}
       <section className="bg-white py-16">
-        <div className="max-w-6xl mx-auto px-6 md:px-12">
-          <motion.p
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <motion.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-charcoal/55 max-w-2xl mx-auto text-center font-light text-base leading-relaxed mb-14"
+            className="text-center mb-12"
           >
-            Visual tales from Into The Wild — a collection of moments captured in perfect harmony with nature.
-          </motion.p>
+            <span className="text-brand text-[10px] uppercase tracking-[0.4em] font-semibold block mb-3">Capture the Moments</span>
+            <p className="text-charcoal/50 max-w-xl mx-auto font-light text-sm leading-relaxed">
+              A visual journey through our resort — moments captured in perfect harmony with nature.
+            </p>
+          </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="columns-2 md:columns-3 lg:columns-4 gap-3 md:gap-4">
             {images.map((img, i) => (
               <motion.button
                 key={img.src}
-                initial={{ opacity: 0, scale: 0.96 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.6, delay: (i % 6) * 0.07 }}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-30px' }}
+                transition={{ duration: 0.55, delay: (i % 8) * 0.055 }}
                 onClick={() => openLightbox(i)}
-                className="group relative aspect-[4/5] overflow-hidden rounded-none bg-ivory focus:outline-none"
+                className="group relative w-full mb-3 md:mb-4 overflow-hidden rounded-xl bg-ivory focus:outline-none break-inside-avoid block"
               >
-                <Image src={img.src} alt={img.caption} fill className="object-cover transition-transform duration-[2000ms] group-hover:scale-105" />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition-colors duration-500" />
-                <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400 gap-2">
-                  <Maximize2 className="w-6 h-6 text-white" />
-                  <span className="text-white text-[10px] uppercase tracking-widest font-light">{img.caption}</span>
+                <div className={`relative ${img.aspect}`}>
+                  <Image
+                    src={img.src}
+                    alt={img.caption}
+                    fill
+                    className="object-cover transition-transform duration-[2000ms] group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-500" />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-2 p-3">
+                    <Maximize2 className="w-5 h-5 text-white drop-shadow" />
+                    <span className="text-white text-[9px] uppercase tracking-widest font-light text-center leading-relaxed drop-shadow">{img.caption}</span>
+                  </div>
                 </div>
               </motion.button>
             ))}

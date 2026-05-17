@@ -2,96 +2,174 @@
 
 import { motion } from 'motion/react';
 import Image from 'next/image';
-import { MapPin, Clock, Star } from 'lucide-react';
 
-const destinations = [
+type DestinationStat = { label: string; value: string };
+
+type Destination = {
+  name: string;
+  tags: string[];
+  image: string;
+  stats: DestinationStat[];
+  description: string;
+  historicalSignificance?: string;
+  visitorExperience: string;
+  bestTime: string;
+  timeRequired: string;
+  entrance: string;
+  idealFor: string;
+};
+
+const destinations: Destination[] = [
   {
     name: 'Sigiriya Rock Fortress',
-    category: 'UNESCO Heritage',
-    distance: '12 km',
-    duration: '30 min drive',
-    rating: '5.0',
+    tags: ['HISTORY', 'CULTURE', 'ADVENTURE'],
     image: '/hero1.jpeg',
+    stats: [
+      { label: 'Distance', value: '~3 km' },
+      { label: 'Travel Time', value: '8–10 mins' },
+      { label: 'Height', value: '~200 m' },
+      { label: 'Climb Time', value: '1.5–2 hours' },
+    ],
     description:
-      'The iconic 5th-century citadel rising 200m above the surrounding plains. Explore ancient frescoes, water gardens, and breathtaking summit views — one of Sri Lanka\'s most spectacular landmarks.',
-    highlights: ['Ancient Rock Fortress', 'Frescoes & Graffiti Wall', 'Panoramic Summit Views'],
-  },
-  {
-    name: 'Dambulla Cave Temple',
-    category: 'Sacred Site',
-    distance: '18 km',
-    duration: '40 min drive',
-    rating: '4.9',
-    image: '/home.jpeg',
-    description:
-      'A sacred complex of five cave temples carved into a massive granite outcrop, housing over 150 statues of the Buddha and remarkable ceiling frescoes spanning 2,000 years of Sri Lankan history.',
-    highlights: ['5 Ancient Cave Temples', '150+ Buddha Statues', 'World Heritage Site'],
-  },
-  {
-    name: 'Minneriya National Park',
-    category: 'Wildlife Safari',
-    distance: '22 km',
-    duration: '45 min drive',
-    rating: '4.8',
-    image: '/20251023_141902.jpg',
-    description:
-      'Witness "The Gathering" — one of the largest assemblies of wild Asian elephants on earth. Minneriya is also home to leopards, sloth bears, sambar deer, and a wealth of birdlife around its ancient reservoir.',
-    highlights: ['Wild Elephant Gathering', 'Leopard & Sloth Bear', 'Ancient Reservoir'],
+      "Sigiriya Rock Fortress—also known as Lion Rock—is Sri Lanka's most celebrated UNESCO World Heritage Site. Rising nearly 200 metres above the jungle, this 5th-century royal citadel was built by King Kashyapa and served as a palace, fortress, and cultural centre.",
+    historicalSignificance:
+      'Sigiriya features symmetrical water gardens, ancient frescoes depicting celestial maidens, and the famous Mirror Wall inscribed with early Sinhalese poetry. The summit once housed royal residences and ceremonial spaces, offering commanding views across the Cultural Triangle.',
+    visitorExperience:
+      'The climb is structured with stairways and rest points, making it accessible for moderately fit visitors. The summit provides expansive views over forests, lakes, and villages.',
+    bestTime: 'Early morning (6.00–9.00 am)',
+    timeRequired: '2–3 hours',
+    entrance: 'Paid ticket',
+    idealFor: 'History lovers, First-time visitors, Photographers, Couples',
   },
   {
     name: 'Pidurangala Rock',
-    category: 'Adventure',
-    distance: '14 km',
-    duration: '35 min drive',
-    rating: '4.7',
+    tags: ['NATURE', 'VIEWS', 'SPIRITUAL'],
     image: '/hero2.jpeg',
+    stats: [
+      { label: 'Distance', value: '~4 km' },
+      { label: 'Travel Time', value: '10–12 mins' },
+      { label: 'Elevation', value: '~200 m' },
+      { label: 'Hike Time', value: '30–45 mins' },
+    ],
     description:
-      'For those who crave the view without the crowds. Pidurangala offers a more challenging hike rewarded with a sweeping panorama of Sigiriya Rock and the surrounding jungle canopy at sunrise.',
-    highlights: ['Sunrise Hike', 'Sigiriya Rock Views', 'Ancient Reclining Buddha'],
+      "Pidurangala Rock is a massive rock formation and scenic viewpoint located just north of the ancient city of Sigiriya. Renowned for its panoramic 360-degree views, it offers one of the island's most iconic sights—Sigiriya Lion Rock rising above dense jungle and lakes.",
+    historicalSignificance:
+      "Pidurangala's religious origins date back to the 5th century CE. When King Kashyapa constructed Sigiriya Fortress, Buddhist monks residing there were relocated to Pidurangala. Meditation caves, stupas, and temple ruins remain visible along the trail.",
+    visitorExperience:
+      'The hike begins through temple grounds where modest attire is required. Stone steps and forest trails lead to caves and the reclining Buddha before the final ascent over large granite boulders.',
+    bestTime: 'Sunrise or sunset',
+    timeRequired: '2 hours',
+    entrance: 'Donation (~LKR 1,000)',
+    idealFor: 'Hikers, Photographers, Couples, Spiritual seekers',
   },
   {
-    name: 'Polonnaruwa Ancient City',
-    category: 'UNESCO Heritage',
-    distance: '55 km',
-    duration: '1.5 hr drive',
-    rating: '4.9',
-    image: '/hero3.jpeg',
+    name: 'Minneriya National Park',
+    tags: ['WILDLIFE', 'SAFARI', 'NATURE'],
+    image: '/20251023_141902.jpg',
+    stats: [
+      { label: 'Distance', value: '~24 km' },
+      { label: 'Travel Time', value: '40–45 mins' },
+      { label: 'Safari Time', value: '3–4 hours' },
+    ],
     description:
-      'Sri Lanka\'s medieval capital, home to superbly preserved ruins of palaces, temples, and the magnificent Gal Vihara — four colossal Buddha figures carved directly from a single granite face.',
-    highlights: ['Gal Vihara Sculptures', 'Royal Palace Ruins', 'Ancient Stupas'],
+      "Minneriya National Park is one of Sri Lanka's premier wildlife destinations, internationally famous for the Great Elephant Gathering. During the dry season, hundreds of wild elephants converge around the ancient Minneriya Tank, creating one of Asia's most remarkable wildlife spectacles.",
+    visitorExperience:
+      'Safaris are conducted by 4×4 jeeps with experienced drivers and naturalists, ensuring ethical wildlife viewing and safety. The park protects dry-zone forests, grasslands, and wetlands.',
+    bestTime: 'Afternoon (2.30–6.30 pm)',
+    timeRequired: '4–5 hours',
+    entrance: 'Park entry + Jeep',
+    idealFor: 'Wildlife lovers, Families, Photographers',
   },
   {
-    name: 'Kaudulla National Park',
-    category: 'Wildlife Safari',
-    distance: '30 km',
-    duration: '50 min drive',
-    rating: '4.7',
-    image: '/094A0142.JPG.jpeg',
+    name: 'Dambulla Cave Temple',
+    tags: ['CULTURE', 'HISTORY', 'SPIRITUAL'],
+    image: '/home.jpeg',
+    stats: [
+      { label: 'Distance', value: '~17 km' },
+      { label: 'Travel Time', value: '25–30 mins' },
+      { label: 'Time Required', value: '1.5–2 hours' },
+    ],
     description:
-      'A quieter alternative to Minneriya, Kaudulla is best known for elephant sightings at dusk around its ancient tank. The park forms part of the "Elephant Corridor" connecting Minneriya and Trikonamadu.',
-    highlights: ['Dusk Elephant Safaris', 'Elephant Corridor', 'Waterbird Sanctuary'],
+      "Dambulla Cave Temple is Sri Lanka's largest and best-preserved cave temple complex, with over 2,000 years of continuous religious use. The site contains five caves adorned with vivid murals and more than 150 Buddha statues, carved and painted across centuries.",
+    historicalSignificance:
+      'Perched on a rocky hill, the temple remains an active place of worship while offering panoramic views over surrounding plains.',
+    visitorExperience:
+      'Morning visits are ideal before the midday heat. The caves are best explored slowly, allowing time to take in the remarkable ceiling murals and the serene atmosphere of an ancient living temple.',
+    bestTime: 'Morning or late afternoon',
+    timeRequired: '1.5–2 hours',
+    entrance: 'Paid entry',
+    idealFor: 'Cultural travellers, Spiritual visitors, Families',
   },
   {
-    name: 'Ritigala Ruins',
-    category: 'Hidden Gem',
-    distance: '40 km',
-    duration: '1 hr drive',
-    rating: '4.6',
-    image: '/about.jpeg',
-    description:
-      'An ancient forest monastery hidden within a nature reserve, rising mysteriously from the dry plains. Ruined stone pathways, meditation platforms, and the rare highland ecology make this a truly off-the-beaten-path experience.',
-    highlights: ['Ancient Forest Monastery', 'Jungle Trekking', 'Rare Flora & Fauna'],
-  },
-  {
-    name: 'Hiriwadunna Village Safari',
-    category: 'Cultural Experience',
-    distance: '8 km',
-    duration: '20 min drive',
-    rating: '4.8',
+    name: 'Cycling Tours Around Sigiriya',
+    tags: ['ACTIVITY', 'NATURE', 'RELAXING'],
     image: '/20251016_101353.jpg.jpeg',
+    stats: [
+      { label: 'Distance', value: 'Near Hotel' },
+      { label: 'Difficulty', value: 'Easy/Flat' },
+      { label: 'Duration', value: '2–3 hours' },
+    ],
     description:
-      'A half-day village experience by tractor, boat, and foot. Discover traditional Sri Lankan rural life — paddy fields, buffalo rides through the tank, village cooking, and a canoe journey through the jungle.',
-    highlights: ['Tractor & Canoe Ride', 'Buffalo Ride', 'Village Cooking Experience'],
+      'Cycling around Sigiriya is a peaceful way to explore rice fields, lakes, and village backroads. The flat terrain and scenic surroundings make it accessible for most fitness levels.',
+    visitorExperience:
+      'Guided cycling routes take guests through paddy fields, small village roads, and along the edges of ancient reservoirs. Bicycles are available for hire near the hotel.',
+    bestTime: 'Early morning or late afternoon',
+    timeRequired: '2–3 hours',
+    entrance: 'Rental fee',
+    idealFor: 'Eco-travellers, Couples, Solo travellers',
+  },
+  {
+    name: 'Sigiriya Village Safari',
+    tags: ['CULTURE', 'FOOD', 'EXPERIENCE'],
+    image: '/20251016_095222.jpg.jpeg',
+    stats: [
+      { label: 'Distance', value: '~5–7 km' },
+      { label: 'Travel Time', value: '15–20 mins' },
+      { label: 'Duration', value: '3–4 hours' },
+    ],
+    description:
+      'The Sigiriya Village Safari offers an immersive introduction to rural Sri Lankan life. Guests experience bullock cart rides, tranquil catamaran journeys across village lakes, and visits to traditional homes, often ending with a freshly prepared village lunch.',
+    visitorExperience:
+      'Village safaris are led by local guides and include hands-on demonstrations of traditional crafts, farming, and cooking. A memorable experience for families and cultural travellers.',
+    bestTime: 'Morning or early afternoon',
+    timeRequired: '3–4 hours',
+    entrance: 'Package basis',
+    idealFor: 'Cultural explorers, Families, Seniors',
+  },
+  {
+    name: 'Nature Walks & Bird Watching',
+    tags: ['NATURE', 'WILDLIFE', 'WELLNESS'],
+    image: '/about.jpeg',
+    stats: [
+      { label: 'Distance', value: '1–3 km' },
+      { label: 'Travel', value: 'Walking' },
+      { label: 'Best Time', value: 'Early morning' },
+    ],
+    description:
+      'The forests and wetlands surrounding Sigiriya support rich biodiversity. Guided nature walks allow guests to spot peacocks, kingfishers, eagles, butterflies, and tropical plant life while enjoying a slow, mindful experience.',
+    visitorExperience:
+      'Guided walks depart from the hotel in the early morning hours when wildlife is most active. Binoculars and field guides are available on request.',
+    bestTime: 'Early morning',
+    timeRequired: '1–2 hours',
+    entrance: 'Mostly free',
+    idealFor: 'Nature lovers, Wellness travellers, Seniors',
+  },
+  {
+    name: 'Traditional Cooking Experience',
+    tags: ['FOOD', 'CULTURE', 'LEARNING'],
+    image: '/ayurvedic-relaxing-health-beauty-happy-blonde-woma-2026-01-05-23-13-51-utc.jpg.jpeg',
+    stats: [
+      { label: 'Travel Time', value: '15–20 mins' },
+      { label: 'Duration', value: '2–3 hours' },
+    ],
+    description:
+      'This hands-on culinary experience introduces guests to authentic Sri Lankan cuisine. Activities include spice explanations, and cooking traditional rice and curry dishes with local hosts.',
+    visitorExperience:
+      'Guests learn to prepare authentic Sri Lankan dishes from scratch, using fresh local produce and traditional techniques. A memorable way to connect with local culture through food.',
+    bestTime: 'Late morning or afternoon',
+    timeRequired: '2–3 hours',
+    entrance: 'Paid activity',
+    idealFor: 'Food lovers, Couples, Families',
   },
 ];
 
@@ -101,124 +179,116 @@ export default function DestinationsPage() {
 
       {/* Hero */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <Image src="/hero1.jpeg" alt="Sri Lanka Destinations" fill className="object-cover" priority />
+        <Image src="/hero1.jpeg" alt="Destinations & Activities" fill className="object-cover" priority />
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 text-center px-6">
           <motion.span
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
             className="text-brand uppercase tracking-[0.35em] text-sm font-semibold mb-4 block"
           >
-            Cultural Triangle, Sri Lanka
+            Explore the Unknown
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             className="font-serif text-5xl md:text-7xl text-white font-light mb-6"
           >
-            Destinations
+            Destinations &amp; Activities
           </motion.h1>
           <div className="w-24 h-[2px] bg-brand mx-auto" />
         </div>
       </section>
 
       {/* Intro */}
-      <section className="bg-white py-16">
-        <div className="max-w-6xl mx-auto px-6 md:px-12 text-center">
-          <motion.div
+      <section className="bg-white py-14">
+        <div className="max-w-5xl mx-auto px-6 md:px-12 text-center">
+          <motion.p
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            className="text-charcoal/55 max-w-2xl mx-auto font-light text-base leading-relaxed"
           >
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="w-8 h-[1px] bg-brand" />
-              <span className="text-[9px] uppercase tracking-[0.45em] text-brand font-semibold">Explore Nearby</span>
-              <div className="w-8 h-[1px] bg-brand" />
-            </div>
-            <p className="text-charcoal/55 max-w-2xl mx-auto font-light text-base leading-relaxed">
-              Positioned in the heart of Sri Lanka's Cultural Triangle, Into the Wild places you minutes from ancient wonders, untamed wildlife reserves, and timeless villages. Every journey from our resort is an adventure waiting to unfold.
-            </p>
-          </motion.div>
+            Discover the ancient wonders and natural beauty that surround our retreat, from majestic rock fortresses to serene wildlife encounters.
+          </motion.p>
         </div>
       </section>
 
-      {/* Destinations Grid */}
-      <section className="bg-ivory py-8 pb-20">
-        <div className="max-w-6xl mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {destinations.map((dest, i) => (
-              <motion.div
-                key={dest.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.7, delay: (i % 2) * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="group bg-white overflow-hidden"
-              >
-                {/* Image */}
-                <div className="relative aspect-[16/9] overflow-hidden">
-                  <Image
-                    src={dest.image} alt={dest.name} fill
-                    className="object-cover transition-transform duration-[2000ms] group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-500" />
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1.5 bg-brand text-black text-[9px] uppercase tracking-[0.35em] font-semibold">
-                      {dest.category}
-                    </span>
-                  </div>
-                  <div className="absolute top-4 right-4 flex items-center gap-1 px-2.5 py-1.5 bg-black/50 backdrop-blur-sm">
-                    <Star className="w-3 h-3 fill-brand text-brand" />
-                    <span className="text-white text-[10px] font-semibold">{dest.rating}</span>
-                  </div>
-                </div>
+      {/* Destination Cards */}
+      <section className="bg-white py-14">
+        <div className="max-w-6xl mx-auto px-6 md:px-12 space-y-10">
+          {destinations.map((dest, index) => (
+            <motion.div
+              key={dest.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="rounded-2xl border border-charcoal/10 overflow-hidden shadow-sm"
+            >
+              <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
 
-                {/* Content */}
-                <div className="p-6">
-                  <div className="flex items-start justify-between mb-3">
-                    <h2 className="font-serif text-xl text-charcoal font-light leading-tight">{dest.name}</h2>
-                    <div className="flex flex-col items-end gap-1 flex-shrink-0 ml-4">
-                      <div className="flex items-center gap-1.5">
-                        <MapPin className="w-3 h-3 text-brand" />
-                        <span className="text-[9px] uppercase tracking-wide text-charcoal/50">{dest.distance}</span>
-                      </div>
-                      <div className="flex items-center gap-1.5">
-                        <Clock className="w-3 h-3 text-brand" />
-                        <span className="text-[9px] uppercase tracking-wide text-charcoal/50">{dest.duration}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <p className="text-charcoal/50 font-light text-sm leading-relaxed mb-4 text-justify">{dest.description}</p>
-
-                  <div className="flex flex-wrap gap-2">
-                    {dest.highlights.map((h) => (
-                      <span key={h} className="px-2.5 py-1 border border-charcoal/12 text-[9px] text-charcoal/45 uppercase tracking-wide font-light">
-                        {h}
+                {/* Image Panel */}
+                <div className="relative lg:w-[45%] aspect-[4/3] lg:aspect-auto overflow-hidden flex-shrink-0 lg:min-h-[420px]">
+                  <Image src={dest.image} alt={dest.name} fill className="object-cover" />
+                  <div className="absolute inset-0 bg-black/25" />
+                  {/* Category tags */}
+                  <div className="absolute top-4 left-4 flex flex-wrap gap-1.5">
+                    {dest.tags.map((tag) => (
+                      <span key={tag} className="px-2.5 py-1 bg-brand text-[#3b3439] text-[8px] uppercase tracking-[0.3em] font-bold rounded-full">
+                        {tag}
                       </span>
                     ))}
                   </div>
+                  {/* Stats overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/70 to-transparent">
+                    <div className="flex flex-wrap gap-5">
+                      {dest.stats.map((stat) => (
+                        <div key={stat.label} className="text-white">
+                          <p className="text-[8px] uppercase tracking-widest text-white/55 font-medium">{stat.label}</p>
+                          <p className="text-sm font-light">{stat.value}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Map CTA */}
-      <section className="bg-charcoal py-14">
-        <div className="max-w-4xl mx-auto px-6 md:px-12 text-center">
-          <span className="text-brand text-[9px] uppercase tracking-[0.45em] font-semibold block mb-3">Plan Your Exploration</span>
-          <h2 className="font-serif text-3xl text-white font-light mb-3">Let Us Arrange Your Day Trips</h2>
-          <p className="text-white/50 font-light text-sm mb-8 max-w-lg mx-auto">
-            Our concierge team handles all transportation, guided tours, and entry tickets. Just tell us where you'd like to go.
-          </p>
-          <a
-            href="https://wa.me/919847000000?text=Hi%2C%20I'd%20like%20to%20arrange%20day%20trips%20from%20Into%20the%20Wild."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-brand text-black text-[10px] uppercase tracking-[0.35em] font-semibold hover:bg-brand-light transition-colors"
-          >
-            <MapPin className="w-3.5 h-3.5" /> Arrange with Concierge
-          </a>
+                {/* Content Panel */}
+                <div className="flex-1 p-8 md:p-10 lg:p-12 flex flex-col justify-center bg-white">
+                  <h2 className="font-serif text-3xl md:text-4xl text-charcoal font-light mb-5">{dest.name}</h2>
+                  <p className="text-charcoal/55 font-light text-sm leading-relaxed mb-7">{dest.description}</p>
+
+                  {dest.historicalSignificance && (
+                    <div className="mb-6">
+                      <h3 className="text-[9px] uppercase tracking-[0.4em] text-brand font-semibold mb-2">Historical Significance</h3>
+                      <p className="text-charcoal/50 font-light text-sm leading-relaxed">{dest.historicalSignificance}</p>
+                    </div>
+                  )}
+
+                  <div className="mb-7">
+                    <h3 className="text-[9px] uppercase tracking-[0.4em] text-brand font-semibold mb-2">Visitor Experience</h3>
+                    <p className="text-charcoal/50 font-light text-sm leading-relaxed">{dest.visitorExperience}</p>
+                  </div>
+
+                  {/* Plan Your Visit */}
+                  <div>
+                    <h3 className="text-[9px] uppercase tracking-[0.4em] text-brand font-semibold mb-3">Plan Your Visit</h3>
+                    <div className="grid grid-cols-2 gap-2.5">
+                      {[
+                        { label: 'BEST TIME', value: dest.bestTime },
+                        { label: 'TIME REQUIRED', value: dest.timeRequired },
+                        { label: 'ENTRANCE', value: dest.entrance },
+                        { label: 'IDEAL FOR', value: dest.idealFor },
+                      ].map((item) => (
+                        <div key={item.label} className="px-3 py-3 bg-ivory border border-charcoal/8 rounded-xl">
+                          <p className="text-[8px] uppercase tracking-widest text-charcoal/35 font-semibold mb-1">{item.label}</p>
+                          <p className="text-[11px] text-charcoal/65 font-light leading-relaxed">{item.value}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
 

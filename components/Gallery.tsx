@@ -19,42 +19,42 @@ export function Gallery() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <div>
              <div className="flex items-center gap-4 mb-4">
-              <span className="text-[10px] tracking-[0.4em] text-brand uppercase font-semibold">Visual Journal</span>
+              <span className="text-[10px] tracking-[0.4em] text-[#3b3439] uppercase font-medium">Visual Journal</span>
               <div className="w-12 h-[1px] bg-brand" />
             </div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-serif text-5xl md:text-7xl text-charcoal font-light leading-tight"
+              className="font-serif italic text-3xl md:text-4xl lg:text-5xl text-brand font-light leading-tight"
             >
-              Immerse in <span className="italic text-brand">Beauty</span>
+              Immerse in Beauty
             </motion.h2>
           </div>
-          <button className="text-[11px] text-charcoal/70 font-semibold uppercase tracking-[0.3em] pb-2 border-b border-brand hover:text-brand transition-colors duration-300">
-             Explore Full Gallery
+          <button className="text-[11px] text-[#3b3439] font-medium uppercase tracking-[0.3em] hover:text-brand transition-colors duration-300">
+            Explore Full Gallery
           </button>
         </div>
 
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {images.map((src, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.8, delay: (idx % 3) * 0.2 }}
-              className="relative overflow-hidden group inline-block w-full cursor-pointer break-inside-avoid"
+              transition={{ duration: 0.8, delay: (idx % 3) * 0.15 }}
+              className="relative overflow-hidden rounded-2xl group cursor-pointer h-[200px] md:h-[220px]"
             >
-              <img 
-                src={src} 
-                alt="Resort Experience" 
-                className="w-full h-auto object-cover transform transition-transform duration-[2s] group-hover:scale-105"
+              <img
+                src={src}
+                alt="Resort Experience"
+                className="absolute inset-0 w-full h-full object-cover rounded-2xl transform transition-transform duration-[2s] group-hover:scale-105"
                 loading="lazy"
               />
               {/* Luxury hover overlay */}
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-center justify-center backdrop-blur-[2px]">
-                <div className="w-12 h-12 rounded-full border border-white/50 flex items-center justify-center transform scale-50 group-hover:scale-100 transition-transform duration-700 delay-100">
+              <div className="absolute inset-0 rounded-2xl bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-center justify-center backdrop-blur-[2px]">
+                <div className="w-10 h-10 rounded-full border border-white/50 flex items-center justify-center transform scale-50 group-hover:scale-100 transition-transform duration-700 delay-100">
                   <div className="w-2 h-2 rounded-full bg-brand" />
                 </div>
               </div>

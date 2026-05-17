@@ -45,16 +45,6 @@ export function ParallaxQuote() {
           className="w-20 h-[1px] bg-brand mx-auto mb-10 origin-center"
         />
 
-        <motion.p
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="font-serif text-[10px] uppercase tracking-[0.5em] text-brand/80 mb-6"
-        >
-          A Philosophy of Living
-        </motion.p>
-
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

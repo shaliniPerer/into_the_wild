@@ -73,9 +73,9 @@ export function BookingCTA() {
           <motion.button
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            className="relative px-16 py-5 bg-brand text-black text-[11px] uppercase tracking-[0.35em] font-semibold overflow-hidden group shadow-[0_8px_40px_rgba(245,217,122,0.3)] hover:shadow-[0_8px_60px_rgba(245,217,122,0.5)] transition-shadow duration-500"
+            className="relative px-16 py-5 bg-brand text-[#3b3439] text-[11px] uppercase tracking-[0.35em] font-semibold overflow-hidden group shadow-[0_8px_40px_rgba(243,184,31,0.3)] hover:shadow-[0_8px_60px_rgba(243,184,31,0.5)] transition-shadow duration-500 rounded-full"
           >
-            <span className="relative z-10 group-hover:text-black transition-colors duration-300">Book Your Escape</span>
+            <span className="relative z-10 group-hover:text-[#3b3439] transition-colors duration-300">Book Your Escape</span>
             <motion.div
               className="absolute inset-0 bg-white origin-left"
               initial={{ scaleX: 0 }}

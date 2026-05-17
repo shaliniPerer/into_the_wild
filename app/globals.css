@@ -11,16 +11,16 @@
 }
 
 @theme {
-  --color-brand: #F5D97A;
-  --color-brand-light: #E7C768;
+  --color-brand: #f3b81f;
+  --color-brand-light: #f5c840;
   --color-surface: #FFFFFF;
   --color-ivory: #FFF8ED;
-  --color-black: #111111;
-  --color-charcoal: #2B2B2B;
+  --color-black: #3b3439;
+  --color-charcoal: #3b3439;
   --color-muted: #999999;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-cormorant), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-serif: var(--font-gilda), ui-serif, Georgia, "Times New Roman", serif;
 }
 
 @layer utilities {
@@ -28,10 +28,10 @@
     @apply bg-white/10 backdrop-blur-xl border border-white/20;
   }
   .glass-dark {
-    @apply bg-[#111111]/70 backdrop-blur-xl border border-white/10;
+    @apply bg-white shadow-md border-b border-[#3b3439]/10;
   }
   .text-glow {
-    text-shadow: 0 0 20px rgba(245, 217, 122, 0.4);
+    text-shadow: 0 0 20px rgba(243, 184, 31, 0.4);
   }
   .luxury-shadow {
     box-shadow: 0 30px 60px -15px rgba(0,0,0,0.3);
@@ -45,7 +45,7 @@
   }
   /* Smooth page appear */
   .page-appear {
-    animation: pageAppear 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation: pageAppear 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
   }
 }
 
@@ -70,12 +70,4 @@ main {
   -webkit-overflow-scrolling: touch;
 }
 
-/* Hide default cursor for custom cursor implementation */
-@media (pointer: fine) {
-  body {
-    cursor: none;
-  }
-  a, button, input, textarea, select {
-    cursor: none;
-  }
-}
+

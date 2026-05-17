@@ -3,8 +3,23 @@
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Users, Maximize, Wifi, Wind, Tv, Coffee, Bath, ArrowRight } from 'lucide-react';
+import { BedDouble, Maximize, Users, Wifi, Wind, Leaf, Bath, Volume2, Coffee, Waves, Mountain, CheckCircle, ArrowRight } from 'lucide-react';
+import React from 'react';
 import { rooms } from '@/lib/rooms';
+
+function getAmenityIcon(amenity: string) {
+  const map: Record<string, React.ReactElement> = {
+    'Free WiFi': <Wifi className="w-4 h-4" />,
+    'Air Conditioning': <Wind className="w-4 h-4" />,
+    'Garden View': <Leaf className="w-4 h-4" />,
+    'Pool View': <Waves className="w-4 h-4" />,
+    'Mountain View': <Mountain className="w-4 h-4" />,
+    'Attached Bathroom': <Bath className="w-4 h-4" />,
+    'Soundproof': <Volume2 className="w-4 h-4" />,
+    'Tea/Coffee Maker': <Coffee className="w-4 h-4" />,
+  };
+  return map[amenity] ?? <Wifi className="w-4 h-4" />;
+}
 
 export default function AccommodationPage() {
   return (
@@ -19,7 +34,7 @@ export default function AccommodationPage() {
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
             className="text-brand uppercase tracking-[0.35em] text-sm font-semibold mb-4 block"
           >
-            Your Private Sanctuary
+            Our Rooms
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
@@ -33,98 +48,106 @@ export default function AccommodationPage() {
       </section>
 
       {/* Intro */}
-      <section className="bg-white pt-16 pb-4">
-        <div className="max-w-6xl mx-auto px-6 md:px-12 text-center">
-          <motion.p
+      <section className="bg-white pt-16 pb-10">
+        <div className="max-w-5xl mx-auto px-6 md:px-12 text-center">
+          <motion.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-charcoal/55 max-w-2xl mx-auto font-light text-base leading-relaxed"
           >
-            Choose from our curated selection of rooms and suites, each designed to harmonise with the natural surroundings while delivering world-class luxury.
-          </motion.p>
+            <h2 className="font-serif text-3xl text-charcoal font-light mb-3">Select Your Room</h2>
+            <p className="text-charcoal/55 max-w-2xl mx-auto font-light text-sm leading-relaxed">
+              Choose from our carefully designed rooms, each offering a unique blend of comfort and natural beauty.
+            </p>
+          </motion.div>
         </div>
       </section>
 
-      {/* Room Cards Grid */}
-      <section className="bg-white py-12">
-        <div className="max-w-6xl mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {rooms.map((room, index) => (
-              <motion.div
-                key={room.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.7, delay: (index % 2) * 0.12, ease: [0.16, 1, 0.3, 1] }}
-                className="group"
-              >
+      {/* Room Cards */}
+      <section className="bg-white pb-20">
+        <div className="max-w-5xl mx-auto px-6 md:px-12 space-y-8">
+          {rooms.map((room, index) => (
+            <motion.div
+              key={room.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.7, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
+              className="group bg-white border border-charcoal/10 overflow-hidden rounded-2xl"
+            >
+              <div className="flex flex-col md:flex-row">
+
                 {/* Image */}
-                <div className="relative aspect-[4/3] overflow-hidden mb-0">
+                <Link href={`/accommodation/${room.id}`} className="relative md:w-[42%] aspect-[4/3] md:aspect-auto overflow-hidden flex-shrink-0 block">  
                   <Image
                     src={room.image} alt={room.name} fill
                     className="object-cover transition-transform duration-[2000ms] group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-500" />
-                  {/* Tag */}
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1.5 bg-brand text-black text-[9px] uppercase tracking-[0.35em] font-semibold">
-                      {room.tag}
-                    </span>
-                  </div>
-                  {/* Price overlay */}
-                  <div className="absolute bottom-4 right-4">
-                    <span className="px-3 py-2 bg-black/60 backdrop-blur-sm text-white font-serif text-lg font-light">
-                      ${room.price}<span className="text-[9px] ml-1 uppercase tracking-widest text-white/70">/ night</span>
-                    </span>
-                  </div>
-                </div>
+                </Link>
 
-                {/* Card Info */}
-                <div className="border border-t-0 border-charcoal/10 px-6 py-5 bg-white">
-                  <div className="flex items-start justify-between mb-3">
-                    <h2 className="font-serif text-2xl text-charcoal font-light leading-tight">{room.name}</h2>
-                    <div className="flex items-center gap-3 pt-1 flex-shrink-0 ml-4">
+                {/* Details */}
+                <div className="flex-1 p-7 md:p-8 flex flex-col justify-between">
+                  <div>
+                    <Link href={`/accommodation/${room.id}`}>
+                      <h2 className="font-serif text-2xl md:text-3xl text-charcoal font-light mb-3 hover:text-brand transition-colors duration-300">{room.name}</h2>
+                    </Link>
+                    <div className="flex flex-wrap items-center gap-5 mb-5">
+                      <div className="flex items-center gap-1.5">
+                        <BedDouble className="w-3.5 h-3.5 text-brand" />
+                        <span className="text-[10px] uppercase tracking-widest text-charcoal/50 font-medium">{room.bedType}</span>
+                      </div>
                       <div className="flex items-center gap-1.5">
                         <Maximize className="w-3.5 h-3.5 text-brand" />
-                        <span className="text-[10px] uppercase tracking-wide text-charcoal/50 font-medium">{room.size}</span>
+                        <span className="text-[10px] uppercase tracking-widest text-charcoal/50 font-medium">{room.size}</span>
                       </div>
                       <div className="flex items-center gap-1.5">
                         <Users className="w-3.5 h-3.5 text-brand" />
-                        <span className="text-[10px] uppercase tracking-wide text-charcoal/50 font-medium">{room.capacity}</span>
+                        <span className="text-[10px] uppercase tracking-widest text-charcoal/50 font-medium">Max {room.capacity} Person</span>
+                      </div>
+                    </div>
+
+                    {/* Price */}
+                    <div className="mb-4">
+                      <span className="font-serif text-2xl text-charcoal font-light">${room.price}</span>
+                      <span className="text-charcoal/40 text-[10px] ml-2 uppercase tracking-wide font-medium">per night &bull; includes taxes</span>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-charcoal/50 font-light text-sm leading-relaxed mb-5 line-clamp-3">{room.description}</p>
+
+                    {/* Amenities */}
+                    <div className="flex flex-wrap gap-x-5 gap-y-2.5 mb-5">
+                      {room.amenities.map((amenity) => (
+                        <div key={amenity} className="flex items-center gap-1.5 text-charcoal/60">
+                          <span className="text-brand">{getAmenityIcon(amenity)}</span>
+                          <span className="text-[10px] uppercase tracking-wide font-medium">{amenity}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Breakfast + Payment */}
+                    <div className="flex flex-wrap gap-2.5 mb-6">
+                      <div className="flex items-center gap-1.5 px-3 py-1.5 bg-brand/10 border border-brand/25 rounded-lg">
+                        <CheckCircle className="w-3.5 h-3.5 text-brand flex-shrink-0" />
+                        <span className="text-[9px] uppercase tracking-widest text-charcoal/65 font-semibold">Sri Lankan &amp; English Mix Breakfast included</span>
+                      </div>
+                      <div className="flex items-center gap-1.5 px-3 py-1.5 bg-charcoal/5 border border-charcoal/10 rounded-lg">
+                        <CheckCircle className="w-3.5 h-3.5 text-charcoal/35 flex-shrink-0" />
+                        <span className="text-[9px] uppercase tracking-widest text-charcoal/45 font-medium">Visa / Master Credit or Debit card Accepted</span>
                       </div>
                     </div>
                   </div>
-                  <p className="text-charcoal/50 font-light text-sm leading-relaxed mb-5 line-clamp-2">{room.description}</p>
+
                   <Link
                     href={`/accommodation/${room.id}`}
-                    className="flex items-center gap-2 w-fit px-6 py-3 bg-charcoal text-white text-[10px] uppercase tracking-[0.35em] font-semibold hover:bg-brand hover:text-black transition-colors duration-300"
+                    className="flex items-center gap-2 w-fit px-6 py-3 bg-charcoal text-white text-[10px] uppercase tracking-[0.35em] font-semibold hover:bg-brand hover:text-[#3b3439] transition-colors duration-300 rounded-full"
                   >
                     View Details <ArrowRight className="w-3 h-3" />
                   </Link>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Amenities Strip */}
-      <section className="bg-ivory border-t border-charcoal/10 py-12 mt-8">
-        <div className="container mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
-            {[
-              { icon: <Wifi className="w-5 h-5" />, label: 'High-Speed Wi-Fi' },
-              { icon: <Wind className="w-5 h-5" />, label: 'Air Conditioning' },
-              { icon: <Tv className="w-5 h-5" />, label: 'Smart Television' },
-              { icon: <Coffee className="w-5 h-5" />, label: 'Daily Breakfast' },
-              { icon: <Bath className="w-5 h-5" />, label: 'Luxury Toiletries' },
-            ].map((item) => (
-              <div key={item.label} className="flex flex-col items-center gap-2">
-                <div className="text-brand">{item.icon}</div>
-                <span className="text-[9px] uppercase tracking-[0.3em] text-charcoal/55 font-medium">{item.label}</span>
               </div>
-            ))}
-          </div>
+            </motion.div>
+          ))}
         </div>
       </section>
 
