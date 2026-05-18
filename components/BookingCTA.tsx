@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
+import Image from "next/image";
 
 export function BookingCTA() {
   const ref = useRef<HTMLDivElement>(null);
@@ -27,6 +28,10 @@ export function BookingCTA() {
       {/* Ambient glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-brand/8 blur-[180px] rounded-full" />
+      </div>
+      {/* Lotus — centered full, slightly visible on dark bg */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+        <Image src="/images/Tranparent Favicon.png" alt="" width={600} height={600} className="w-[48vw] max-w-[520px] opacity-[0.08]" unoptimized />
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10 flex flex-col items-center text-center">

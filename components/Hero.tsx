@@ -50,8 +50,7 @@ export function Hero() {
       {/* Background Slides with parallax */}
       <motion.div style={{ y }} className="absolute inset-0 w-full h-full">
         {/* Overlays */}
-        <div className="absolute inset-0 bg-black/45 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10" />
 
         {/* Crossfade slides */}
         <AnimatePresence initial={false}>

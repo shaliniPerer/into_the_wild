@@ -74,12 +74,11 @@ export function ImmersiveExperience() {
           <Suspense fallback={null}>
             <PanoramaSphere />
             <OrbitControls
-              enableZoom={true}
+              enableZoom={false}
               enablePan={false}
               autoRotate
               autoRotateSpeed={0.4}
               rotateSpeed={-0.4}
-              zoomSpeed={0.5}
               reverseOrbit={false}
             />
           </Suspense>

@@ -17,12 +17,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'INTO THE WILD | Luxury Eco Resort',
+  title: 'INTO THE WILD ',
   description: 'Experience Wilderness in Elegance. A luxury eco resort and boutique nature retreat.',
   icons: {
-    icon: '/lotus-icon.png',
-    shortcut: '/lotus-icon.png',
-    apple: '/lotus-icon.png',
+    icon: '/images/Favicon.png',
+    shortcut: '/images/Favicon.png',
+    apple: '/images/Favicon.png',
   },
 };
 

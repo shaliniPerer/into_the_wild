@@ -45,21 +45,21 @@ export function Navbar() {
         transition={{ duration: 0.35, ease: "easeInOut" }}
         className="overflow-hidden border-b border-[#3b3439]/10"
       >
-        <div className="container mx-auto px-6 md:px-12 py-2 flex items-center justify-between">
+        <div className="container mx-auto px-6 md:px-12 py-2.5 flex items-center justify-between">
           <div className="flex items-center gap-5">
             <a
               href="tel:+94112345678"
-              className="flex items-center gap-1.5 text-[13px] text-[#3b3439]/70 hover:text-brand transition-colors"
+              className="flex items-center gap-2 text-[15px] text-[#3b3439]/70 hover:text-brand transition-colors"
             >
-              <Phone className="w-3 h-3 shrink-0" />
+              <Phone className="w-4 h-4 shrink-0" />
               +94 11 234 5678
             </a>
             <span className="hidden sm:block text-[#3b3439]/20 select-none">|</span>
             <a
               href="mailto:reserve@intothewild.com"
-              className="hidden sm:flex items-center gap-1.5 text-[13px] text-[#3b3439]/70 hover:text-brand transition-colors"
+              className="hidden sm:flex items-center gap-2 text-[15px] text-[#3b3439]/70 hover:text-brand transition-colors"
             >
-              <Mail className="w-3 h-3 shrink-0" />
+              <Mail className="w-4 h-4 shrink-0" />
               reserve@intothewild.com
             </a>
           </div>
@@ -71,16 +71,16 @@ export function Navbar() {
               aria-label="Location"
               className="text-[#3b3439]/60 hover:text-brand transition-colors"
             >
-              <MapPin className="w-3.5 h-3.5" />
+              <MapPin className="w-4 h-4" />
             </a>
             <a href="#" aria-label="Instagram" className="text-[#3b3439]/60 hover:text-brand transition-colors">
-              <Instagram className="w-3.5 h-3.5" />
+              <Instagram className="w-4 h-4" />
             </a>
             <a href="#" aria-label="Facebook" className="text-[#3b3439]/60 hover:text-brand transition-colors">
-              <Facebook className="w-3.5 h-3.5" />
+              <Facebook className="w-4 h-4" />
             </a>
             <a href="#" aria-label="Twitter" className="text-[#3b3439]/60 hover:text-brand transition-colors">
-              <Twitter className="w-3.5 h-3.5" />
+              <Twitter className="w-4 h-4" />
             </a>
           </div>
         </div>
@@ -94,9 +94,9 @@ export function Navbar() {
           <Image
             src="/images/logo.png"
             alt="Into The Wild Hotel"
-            width={100}
-            height={44}
-            className="object-contain h-12 w-auto"
+            width={120}
+            height={52}
+            className="object-contain h-14 w-auto"
             priority
           />
         </Link>
@@ -107,7 +107,7 @@ export function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-[13px] font-normal transition-colors duration-300 text-[#3b3439] hover:text-brand"
+              className="text-[15px] font-normal transition-colors duration-300 text-[#3b3439] hover:text-brand"
             >
               {link.name}
             </Link>
@@ -119,9 +119,9 @@ export function Navbar() {
           <Image
             src="/images/logo.png"
             alt="Into The Wild Hotel — Sigiriya, Sri Lanka"
-            width={180}
-            height={80}
-            className="object-contain h-20 w-auto"
+            width={200}
+            height={90}
+            className="object-contain h-24 w-auto"
             priority
           />
         </Link>

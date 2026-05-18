@@ -5,7 +5,11 @@ import Image from "next/image";
 
 export function About() {
   return (
-    <section id="about" className="py-24 md:py-32 bg-white overflow-hidden">
+    <section id="about" className="py-24 md:py-32 bg-white overflow-hidden relative">
+      {/* Lotus — bottom-right corner peeking */}
+      <div className="absolute -bottom-16 -right-16 pointer-events-none select-none">
+        <Image src="/images/Tranparent Favicon.png" alt="" width={380} height={380} className="opacity-[0.06]" unoptimized />
+      </div>
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
 
@@ -30,13 +34,13 @@ export function About() {
 
             
 
-            <p className="text-[#3b3439] leading-relaxed mb-5 font-light text-[15px] text-justify">
+            <p className="text-[#3b3439] leading-relaxed mb-5 font-light text-[17px] text-justify">
               Nestled deep within a pristine ancient forest, &ldquo;INTO THE WILD&rdquo; is a sanctuary
               for those who seek profound connection with nature without compromising on bespoke luxury.
               Here, the symphony of the jungle meets world-class hospitality to create an experience
               that transcends the ordinary.
             </p>
-            <p className="text-[#3b3439] leading-relaxed mb-5 font-light text-[15px] text-justify">
+            <p className="text-[#3b3439] leading-relaxed mb-5 font-light text-[17px] text-justify">
               Every villa, every pathway, and every experience has been masterfully crafted to
               ensure minimal environmental impact while providing maximum comfort. Discover a retreat
               where time slows down, and the wild embraces you.

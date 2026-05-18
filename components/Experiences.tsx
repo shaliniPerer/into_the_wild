@@ -33,6 +33,10 @@ const experiences = [
 export function Experiences() {
   return (
     <section id="experiences" className="py-32 bg-ivory text-charcoal relative overflow-hidden">
+      {/* Lotus — centered full, very faint */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+        <Image src="/images/Tranparent Favicon.png" alt="" width={600} height={600} className="w-[45vw] max-w-[480px] opacity-[0.05]" unoptimized />
+      </div>
       <div className="container mx-auto px-6 md:px-12 relative z-10">
 
         {/* Header */}

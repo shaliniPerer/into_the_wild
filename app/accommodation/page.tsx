@@ -64,7 +64,7 @@ export default function AccommodationPage() {
 
       {/* Room Cards */}
       <section className="bg-white pb-20">
-        <div className="max-w-5xl mx-auto px-6 md:px-12 space-y-8">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-14">
           {rooms.map((room, index) => (
             <motion.div
               key={room.id}
@@ -77,7 +77,7 @@ export default function AccommodationPage() {
               <div className="flex flex-col md:flex-row">
 
                 {/* Image */}
-                <Link href={`/accommodation/${room.id}`} className="relative md:w-[42%] aspect-[4/3] md:aspect-auto overflow-hidden flex-shrink-0 block">  
+                <Link href={`/accommodation/${room.id}`} className="relative md:w-[35%] aspect-[16/10] md:aspect-auto overflow-hidden flex-shrink-0 block">
                   <Image
                     src={room.image} alt={room.name} fill
                     className="object-cover transition-transform duration-[2000ms] group-hover:scale-105"
@@ -86,7 +86,7 @@ export default function AccommodationPage() {
                 </Link>
 
                 {/* Details */}
-                <div className="flex-1 p-7 md:p-8 flex flex-col justify-between">
+                <div className="flex-1 p-5 md:p-5 flex flex-col justify-between">
                   <div>
                     <Link href={`/accommodation/${room.id}`}>
                       <h2 className="font-serif text-2xl md:text-3xl text-charcoal font-light mb-3 hover:text-brand transition-colors duration-300">{room.name}</h2>
@@ -148,6 +148,30 @@ export default function AccommodationPage() {
               </div>
             </motion.div>
           ))}
+        </div>
+      </section>
+
+      {/* Restaurant CTA */}
+      <section className="relative overflow-hidden">
+        <div className="relative h-[420px] flex items-center justify-center">
+          <Image src="/home.jpeg" alt="Dining at Into the Wild" fill className="object-cover object-center" />
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="relative z-10 text-center px-6 flex flex-col items-center">
+            <span className="text-brand uppercase tracking-[0.35em] text-xs font-semibold mb-4 block">Dining Experience</span>
+            <h2 className="font-serif text-4xl md:text-5xl text-white font-light mb-4 leading-tight">
+              Savour the Wild,<br />
+              <span className="italic text-brand">Taste the Forest</span>
+            </h2>
+            <p className="text-white/60 text-sm font-light max-w-md mb-8 leading-relaxed">
+              From jungle-to-table menus to candlelit open-air dining — explore our restaurant experience.
+            </p>
+            <Link
+              href="/restaurants"
+              className="flex items-center gap-2 px-8 py-3.5 bg-brand text-[#3b3439] text-[11px] uppercase tracking-[0.25em] font-semibold hover:bg-white transition-colors duration-300 rounded-full"
+            >
+              Explore Dining <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
         </div>
       </section>
 

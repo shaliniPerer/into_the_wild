@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Star, CheckCircle, ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -110,6 +111,10 @@ export function Testimonials() {
   return (
     <section id="testimonials" className="py-28 bg-[#faf9f7] relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-brand/4 blur-[160px] rounded-full pointer-events-none" />
+      {/* Lotus — bottom-left corner peeking */}
+      <div className="absolute -bottom-24 -left-24 pointer-events-none select-none">
+        <Image src="/images/Tranparent Favicon.png" alt="" width={420} height={420} className="opacity-[0.07]" unoptimized />
+      </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         {/* Header */}
@@ -234,7 +239,7 @@ export function Testimonials() {
           className="flex justify-center mt-10"
         >
           <a
-            href="https://maps.app.goo.gl/your-google-reviews-link"
+            href="https://www.google.com/maps/place/Into+The+Wild+Hotel/@7.9353579,80.7031961,17z/data=!4m11!3m10!1s0x3afca40dd89f4acb:0xa8ee58a87589b104!5m2!4m1!1i2!8m2!3d7.9353579!4d80.705771!9m1!1b1!16s%2Fg%2F11ggls64w5?authuser=0&entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-3.5 border border-brand/30 text-brand text-[11px] uppercase tracking-[0.35em] font-medium hover:bg-brand hover:text-white transition-all duration-300 rounded-full"

@@ -4,7 +4,6 @@ import { motion } from "motion/react";
 import {
   Waves,
   PlaneTakeoff,
-  Wind,
   Users,
   ConciergeBell,
   UtensilsCrossed,
@@ -13,6 +12,7 @@ import {
   GlassWater,
   Sunrise,
 } from "lucide-react";
+import Image from "next/image";
 
 const services = [
   {
@@ -24,11 +24,6 @@ const services = [
     icon: PlaneTakeoff,
     title: "Airport Shuttle",
     description: "Seamless transfers from the airport directly to your retreat.",
-  },
-  {
-    icon: Wind,
-    title: "Non-Smoking Rooms",
-    description: "Fresh, clean spaces designed for your comfort and well-being.",
   },
   {
     icon: Users,
@@ -72,6 +67,10 @@ export function Services() {
     <section id="services" className="py-28 bg-white relative overflow-hidden">
       {/* subtle ambient glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-brand/5 blur-[160px] rounded-full pointer-events-none" />
+      {/* Lotus — top-left corner peeking */}
+      <div className="absolute -top-20 -left-20 pointer-events-none select-none">
+        <Image src="/images/Tranparent Favicon.png" alt="" width={360} height={360} className="opacity-[0.06]" unoptimized />
+      </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         {/* Header */}
@@ -100,7 +99,7 @@ export function Services() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
@@ -110,15 +109,15 @@ export function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.65, delay: index * 0.06 }}
-                className="group flex flex-col items-center text-center p-6 rounded-2xl border border-brand/10 hover:border-brand/30 hover:shadow-lg hover:shadow-brand/5 transition-all duration-500 bg-white"
+                className="group flex flex-col items-center text-center p-10 rounded-2xl border border-brand/10 hover:border-brand/30 hover:shadow-lg hover:shadow-brand/5 transition-all duration-500 bg-white"
               >
-                <div className="w-12 h-12 flex items-center justify-center rounded-full bg-brand/8 group-hover:bg-brand/15 transition-colors duration-400 mb-4">
-                  <Icon className="w-5 h-5 text-brand" strokeWidth={1.5} />
+                <div className="w-20 h-20 flex items-center justify-center rounded-full bg-brand/8 group-hover:bg-brand/15 transition-colors duration-400 mb-6">
+                  <Icon className="w-9 h-9 text-brand" strokeWidth={1.5} />
                 </div>
-                <h3 className="font-serif text-[#2a2026] text-sm font-medium leading-snug mb-2">
+                <h3 className="font-serif text-[#2a2026] text-lg font-medium leading-snug mb-3">
                   {service.title}
                 </h3>
-                <p className="text-[#3b3439]/60 text-[12px] font-light leading-relaxed">
+                <p className="text-[#3b3439]/60 text-[14px] font-light leading-relaxed">
                   {service.description}
                 </p>
               </motion.div>
