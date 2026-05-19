@@ -9,21 +9,21 @@ const rooms = [
     id: 1,
     title: "Canopy Pool Villa",
     description: "Elevated above the forest floor with a private infinity plunge pool.",
-    image: "/20251016_153610.jpg",
+    image: "/20251016_153610.avif",
     price: "$850",
   },
   {
     id: 2,
     title: "The Wild Suite",
     description: "Expansive open-plan living with panoramic floor-to-ceiling wilderness views.",
-    image: "/20251016_144553.jpg",
+    image: "/20251016_144553.avif",
     price: "$1,200",
   },
   {
     id: 3,
     title: "Riverfront Pavilion",
     description: "Set along the gentle river with a private deck and outdoor soaking tub.",
-    image: "/20251023_135406.jpg",
+    image: "/20251023_135406.avif",
     price: "$650",
   }
 ];

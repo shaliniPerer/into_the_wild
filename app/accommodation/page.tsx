@@ -27,9 +27,9 @@ export default function AccommodationPage() {
 
       {/* Hero */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <Image src="/20251016_153610.jpg" alt="Accommodation" fill className="object-cover object-center" priority />
+        <Image src="/images/Room Outside/DSC00633.avif" alt="Accommodation" fill className="object-cover object-center" priority />
         <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 text-center px-6">
+        <div className="relative z-10 text-center px-6 flex flex-col items-center mt-16">
           <motion.span
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
             className="text-brand uppercase tracking-[0.35em] text-sm font-semibold mb-4 block"
@@ -154,7 +154,7 @@ export default function AccommodationPage() {
       {/* Restaurant CTA */}
       <section className="relative overflow-hidden">
         <div className="relative h-[420px] flex items-center justify-center">
-          <Image src="/home.jpeg" alt="Dining at Into the Wild" fill className="object-cover object-center" />
+          <Image src="/images/Pool Area/DSC00763.avif" alt="Dining at Into the Wild" fill className="object-cover object-center" />
           <div className="absolute inset-0 bg-black/60" />
           <div className="relative z-10 text-center px-6 flex flex-col items-center">
             <span className="text-brand uppercase tracking-[0.35em] text-xs font-semibold mb-4 block">Dining Experience</span>

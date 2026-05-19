@@ -37,19 +37,27 @@ export default function RoomDetailPage() {
     <main className="flex-1 bg-white">
 
       {/* Hero */}
-      <section className="relative h-[60vh] overflow-hidden">
+      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <Image src={room.image} alt={room.name} fill className="object-cover" priority />
         <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute bottom-8 left-8 md:left-16 z-10">
-          <Link href="/accommodation" className="flex items-center gap-2 text-white/70 hover:text-brand transition-colors text-xs uppercase tracking-widest mb-4 w-fit">
+        <div className="relative z-10 text-center px-6 flex flex-col items-center mt-16">
+          <Link href="/accommodation" className="flex items-center gap-2 text-white/70 hover:text-brand transition-colors text-xs uppercase tracking-widest mb-6">
             <ArrowLeft className="w-3.5 h-3.5" /> Back to Rooms
           </Link>
+          <motion.span
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+            className="text-brand uppercase tracking-[0.35em] text-sm font-semibold mb-4 block"
+          >
+            Accommodation
+          </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-            className="font-serif text-4xl md:text-6xl text-white font-light"
+            transition={{ delay: 0.2 }}
+            className="font-serif text-5xl md:text-7xl text-white font-light mb-6"
           >
             {room.name}
           </motion.h1>
+          <div className="w-24 h-[2px] bg-brand" />
         </div>
       </section>
 
@@ -171,7 +179,7 @@ export default function RoomDetailPage() {
                   <p className="text-[9px] uppercase tracking-[0.4em] text-charcoal/40 font-semibold mb-4">Also Available On</p>
                   <div className="flex flex-col gap-2">
                     <a
-                      href="https://www.booking.com/Share-gplZl5"
+                      href="https://www.booking.com/hotel/lk/intothe-wild-sigirya.en-gb.html?aid=356980&checkin=2026-10-14&checkout=2026-10-15&dest_id=-2235832&dest_type=city&group_adults=2&group_children=0&label=gog235jc-10CAsohQFCFGludG90aGUtd2lsZC1zaWdpcnlhSDNYA2iFAYgBAZgBM7gBF8gBDNgBA-gBAfgBAYgCAagCAbgC7Zmg0AbAAgHSAiQ1OTU3M2Y5Zi0xZmZlLTRlM2MtODg4NS0zMTc4ZWQ3NGNhODnYAgHgAgE-Share-rc1yA4%401778912513&no_rooms=1&req_adults=2&req_children=0&chal_t=1779027251617&force_referer="
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-between px-4 py-3 border border-charcoal/10 hover:border-brand hover:bg-brand/5 transition-colors group rounded-lg"
@@ -180,12 +188,12 @@ export default function RoomDetailPage() {
                       <ExternalLink className="w-3 h-3 text-charcoal/30 group-hover:text-brand transition-colors" />
                     </a>
                     <a
-                      href="https://www.airbnb.com/rooms/1383068012318418039"
+                      href="https://www.agoda.com/en-gb/into-the-wild-sigiriya_2/hotel/all/sigiriya-lk.html"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-between px-4 py-3 border border-charcoal/10 hover:border-brand hover:bg-brand/5 transition-colors group rounded-lg"
                     >
-                      <span className="text-[10px] uppercase tracking-widest text-charcoal/60 font-medium group-hover:text-charcoal transition-colors">Airbnb</span>
+                      <span className="text-[10px] uppercase tracking-widest text-charcoal/60 font-medium group-hover:text-charcoal transition-colors">Agoda</span>
                       <ExternalLink className="w-3 h-3 text-charcoal/30 group-hover:text-brand transition-colors" />
                     </a>
                   </div>

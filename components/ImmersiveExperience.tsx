@@ -5,9 +5,10 @@ import { Canvas } from "@react-three/fiber";
 import { useTexture, OrbitControls } from "@react-three/drei";
 import { motion, useInView } from "motion/react";
 import * as THREE from "three";
+import { ChevronDown } from "lucide-react";
 
 function PanoramaSphere() {
-  const texture = useTexture("/rotate.JPG.jpeg");
+  const texture = useTexture("/rotate.avif");
   texture.colorSpace = THREE.SRGBColorSpace;
   return (
     <mesh scale={[-1, 1, 1]}>
@@ -83,6 +84,17 @@ export function ImmersiveExperience() {
             />
           </Suspense>
         </Canvas>
+
+        {/* Mobile scroll-down arrow */}
+        <div className="md:hidden absolute bottom-6 left-1/2 -translate-x-1/2 z-10">
+          <a
+            href="#services"
+            aria-label="Scroll to next section"
+            className="flex items-center justify-center w-11 h-11 rounded-full bg-black/30 backdrop-blur-sm border border-white/20 text-white animate-bounce"
+          >
+            <ChevronDown className="w-5 h-5" />
+          </a>
+        </div>
       </motion.div>
 
     </section>

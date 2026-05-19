@@ -4,12 +4,12 @@ import { motion } from "motion/react";
 import Image from "next/image";
 
 const images = [
-  "/20251016_141228.jpg",
-  "/20251016_123549.jpg",
-  "/20251016_144821.jpg",
-  "/20251023_134530.jpg",
-  "/hero2.jpeg",
-  "/hero3.jpeg",
+  "/20251016_141228.avif",
+  "/20251016_123549.avif",
+  "/20251016_144821.avif",
+  "/20251023_134530.avif",
+  "/hero2.avif",
+  "/hero3.avif",
 ];
 
 export function Gallery() {

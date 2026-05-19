@@ -23,7 +23,7 @@ const destinations: Destination[] = [
   {
     name: 'Sigiriya Rock Fortress',
     tags: ['HISTORY', 'CULTURE', 'ADVENTURE'],
-    image: '/hero1.jpeg',
+    image: '/hero1.avif',
     stats: [
       { label: 'Distance', value: '~3 km' },
       { label: 'Travel Time', value: '8–10 mins' },
@@ -44,7 +44,7 @@ const destinations: Destination[] = [
   {
     name: 'Pidurangala Rock',
     tags: ['NATURE', 'VIEWS', 'SPIRITUAL'],
-    image: '/hero2.jpeg',
+    image: '/hero2.avif',
     stats: [
       { label: 'Distance', value: '~4 km' },
       { label: 'Travel Time', value: '10–12 mins' },
@@ -65,7 +65,7 @@ const destinations: Destination[] = [
   {
     name: 'Minneriya National Park',
     tags: ['WILDLIFE', 'SAFARI', 'NATURE'],
-    image: '/20251023_141902.jpg',
+    image: '/20251023_141902.avif',
     stats: [
       { label: 'Distance', value: '~24 km' },
       { label: 'Travel Time', value: '40–45 mins' },
@@ -83,7 +83,7 @@ const destinations: Destination[] = [
   {
     name: 'Dambulla Cave Temple',
     tags: ['CULTURE', 'HISTORY', 'SPIRITUAL'],
-    image: '/home.jpeg',
+    image: '/home.avif',
     stats: [
       { label: 'Distance', value: '~17 km' },
       { label: 'Travel Time', value: '25–30 mins' },
@@ -103,7 +103,7 @@ const destinations: Destination[] = [
   {
     name: 'Cycling Tours Around Sigiriya',
     tags: ['ACTIVITY', 'NATURE', 'RELAXING'],
-    image: '/20251016_101353.jpg.jpeg',
+    image: '/20251016_101353.avif',
     stats: [
       { label: 'Distance', value: 'Near Hotel' },
       { label: 'Difficulty', value: 'Easy/Flat' },
@@ -121,7 +121,7 @@ const destinations: Destination[] = [
   {
     name: 'Sigiriya Village Safari',
     tags: ['CULTURE', 'FOOD', 'EXPERIENCE'],
-    image: '/20251016_095222.jpg.jpeg',
+    image: '/20251016_095222.avif',
     stats: [
       { label: 'Distance', value: '~5–7 km' },
       { label: 'Travel Time', value: '15–20 mins' },
@@ -139,7 +139,7 @@ const destinations: Destination[] = [
   {
     name: 'Nature Walks & Bird Watching',
     tags: ['NATURE', 'WILDLIFE', 'WELLNESS'],
-    image: '/about.jpeg',
+    image: '/about.avif',
     stats: [
       { label: 'Distance', value: '1–3 km' },
       { label: 'Travel', value: 'Walking' },
@@ -157,7 +157,7 @@ const destinations: Destination[] = [
   {
     name: 'Traditional Cooking Experience',
     tags: ['FOOD', 'CULTURE', 'LEARNING'],
-    image: '/ayurvedic-relaxing-health-beauty-happy-blonde-woma-2026-01-05-23-13-51-utc.jpg.jpeg',
+    image: '/ayurvedic-relaxing-health-beauty-happy-blonde-woma-2026-01-05-23-13-51-utc.avif',
     stats: [
       { label: 'Travel Time', value: '15–20 mins' },
       { label: 'Duration', value: '2–3 hours' },
@@ -179,9 +179,9 @@ export default function DestinationsPage() {
 
       {/* Hero */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <Image src="/hero1.jpeg" alt="Destinations & Activities" fill className="object-cover" priority />
+        <Image src="/images/Drone/DJI_20260504173711_0078_D_1778177363708.avif" alt="Destinations & Activities" fill className="object-cover" priority />
         <div className="absolute inset-0 bg-black/55" />
-        <div className="relative z-10 text-center px-6">
+        <div className="relative z-10 text-center px-6 flex flex-col items-center mt-16">
           <motion.span
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
             className="text-brand uppercase tracking-[0.35em] text-sm font-semibold mb-4 block"

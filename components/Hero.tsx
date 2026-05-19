@@ -7,19 +7,19 @@ import Image from "next/image";
 
 const slides = [
   {
-    image: "/images/DJI_20260504173915_0079_D_1778177359348.jpg",
+    image: "/images/Drone/DJI_20260504174020_0082_D_1778177342387.avif",
     title: "Into the Wild, From Every Angle",
     subtitle:
       "Discover a peaceful nature escape surrounded by greenery, comfort, and calm views.",
   },
   {
-    image: "/images/DSC00747.jpg",
+    image: "/images/Pool Area/DSC00751.avif",
     title: "Relax by the Pool, Surrounded by Nature",
     subtitle:
       "Enjoy refreshing poolside moments in a calm outdoor setting after exploring Sigiriya.",
   },
   {
-    image: "/images/DSC00568-HDR.jpg",
+    image: "/images/Room Outside/DSC00630.avif",
     title: "Stay in Comfort, Close to Nature",
     subtitle:
       "Comfortable rooms designed for a peaceful stay with a relaxing nature-inspired atmosphere.",

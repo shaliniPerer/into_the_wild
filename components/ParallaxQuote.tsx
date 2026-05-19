@@ -14,7 +14,7 @@ export function ParallaxQuote() {
       {/* Parallax background */}
       <motion.div style={{ y }} className="absolute inset-0 scale-125">
         <img
-          src="/hero1.jpeg"
+          src="/hero1.avif"
           alt="Into the Wild"
           className="w-full h-full object-cover"
         />

@@ -65,7 +65,7 @@ export function Navbar() {
           </div>
           <div className="flex items-center gap-4">
             <a
-              href="https://maps.google.com/?q=Sigiriya,Sri+Lanka"
+              href="https://maps.app.goo.gl/ndTW47gLeAnLNQas6"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Location"
@@ -73,35 +73,21 @@ export function Navbar() {
             >
               <MapPin className="w-4 h-4" />
             </a>
-            <a href="#" aria-label="Instagram" className="text-[#3b3439]/60 hover:text-brand transition-colors">
+            <a href="https://www.instagram.com/into_the_wild_sigiriya_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-[#3b3439]/60 hover:text-brand transition-colors">
               <Instagram className="w-4 h-4" />
             </a>
-            <a href="#" aria-label="Facebook" className="text-[#3b3439]/60 hover:text-brand transition-colors">
+            <a href="https://www.facebook.com/p/Into-the-Wild-Sigiriya-100059199109707/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-[#3b3439]/60 hover:text-brand transition-colors">
               <Facebook className="w-4 h-4" />
             </a>
-            <a href="#" aria-label="Twitter" className="text-[#3b3439]/60 hover:text-brand transition-colors">
-              <Twitter className="w-4 h-4" />
-            </a>
+            
           </div>
         </div>
       </motion.div>
 
       {/* Main nav row */}
-      <div className="container mx-auto px-6 md:px-12 grid grid-cols-[1fr_auto_1fr] items-center py-1">
+      <div className="container mx-auto px-6 md:px-12 relative flex items-center justify-center py-3 min-h-[56px] md:grid md:grid-cols-[1fr_auto_1fr] md:py-1">
 
-        {/* Mobile: logo left */}
-        <Link href="/" className="flex md:hidden items-center col-span-2">
-          <Image
-            src="/images/logo.png"
-            alt="Into The Wild Hotel"
-            width={120}
-            height={52}
-            className="object-contain h-14 w-auto"
-            priority
-          />
-        </Link>
-
-        {/* Desktop: Left nav links (all) */}
+        {/* Desktop: Left nav links */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
@@ -114,34 +100,32 @@ export function Navbar() {
           ))}
         </nav>
 
-        {/* Desktop: Center logo — perfectly centered via grid */}
-        <Link href="/" className="hidden md:flex items-center justify-center">
+        {/* Logo — centered via flex parent on mobile, center grid col on desktop */}
+        <Link href="/" className="flex items-center md:justify-center">
           <Image
-            src="/images/logo.png"
+            src="/Web Logo transparent.png"
             alt="Into The Wild Hotel — Sigiriya, Sri Lanka"
             width={200}
             height={90}
-            className="object-contain h-24 w-auto"
+            className="object-contain h-14 md:h-24 w-auto"
             priority
           />
         </Link>
 
-        {/* Desktop: Right — Book Now only */}
+        {/* Mobile: hamburger, absolutely right-aligned */}
+        <button
+          className={cn("absolute right-6 p-2 transition-colors text-[#3b3439] hover:text-brand md:hidden")}
+          onClick={() => setMobileMenuOpen(true)}
+        >
+          <Menu className="w-6 h-6" />
+        </button>
+
+        {/* Desktop: Book Now */}
         <div className="hidden md:flex items-center justify-end">
           <button
             className="px-8 py-2.5 text-[12px] font-medium transition-all duration-500 border rounded-full shadow-lg bg-brand text-[#3b3439] border-brand hover:bg-[#f3b81f]/80 hover:shadow-brand/20 hover:shadow-xl"
           >
             Book Now
-          </button>
-        </div>
-
-        {/* Mobile Toggle */}
-        <div className="flex md:hidden justify-end">
-          <button
-            className={cn("p-2 transition-colors text-[#3b3439] hover:text-brand")}
-            onClick={() => setMobileMenuOpen(true)}
-          >
-            <Menu className="w-6 h-6" />
           </button>
         </div>
       </div>
@@ -173,7 +157,7 @@ export function Navbar() {
               />
             </div>
 
-            <nav className="flex flex-col items-center gap-10">
+            <nav className="flex flex-col items-center gap-5">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.name}
@@ -184,9 +168,10 @@ export function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-4xl font-serif tracking-[0.2em] font-light text-[#3b3439]/80 hover:text-brand transition-colors uppercase"
+                    className="relative text-[22px] font-serif tracking-[0.2em] font-light text-[#3b3439]/80 hover:text-brand transition-colors duration-300 uppercase group"
                   >
                     {link.name}
+                    <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-brand transition-all duration-300 group-hover:w-full" />
                   </Link>
                 </motion.div>
               ))}
@@ -194,7 +179,7 @@ export function Navbar() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: navLinks.length * 0.1, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="mt-8 px-12 py-4 bg-brand text-[#3b3439] font-semibold tracking-[0.3em] uppercase text-[11px] rounded-full"
+                className="mt-6 px-12 py-4 bg-brand text-[#3b3439] font-semibold tracking-[0.3em] uppercase text-[11px] rounded-full"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Book Now

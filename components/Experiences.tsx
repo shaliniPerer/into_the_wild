@@ -8,25 +8,25 @@ const experiences = [
     id: 1,
     title: "Wildlife Safari",
     subtitle: "Dawn expeditions",
-    image: "/20251023_141902.jpg",
+    image: "/images/Drone/DJI_20260504174259_0083_D_1778177332595.avif",
   },
   {
     id: 2,
     title: "Forest Dining",
     subtitle: "Under the canopy",
-    image: "/home.jpeg",
+    image: "/Reastuarent Area/Reastuarent Area/DSC00784-HDR.avif",
   },
   {
     id: 3,
     title: "Nature Wellness",
     subtitle: "Ancient healing rituals",
-    image: "/ayurvedic-relaxing-health-beauty-happy-blonde-woma-2026-01-05-23-13-51-utc.jpg.jpeg",
+    image: "/images/Room Outside/DSC00649.avif",
   },
   {
     id: 4,
     title: "Adventure Trails",
     subtitle: "Untamed wilderness",
-    image: "/094A0142.JPG.jpeg",
+    image: "/images/Room Outside/DSC00659.avif",
   },
 ];
 

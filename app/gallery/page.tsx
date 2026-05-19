@@ -6,36 +6,56 @@ import Image from 'next/image';
 import { X, Maximize2, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const images = [
-  { src: '/images/DJI_20260504173915_0079_D_1778177359348.jpg', caption: 'Aerial View',         aspect: 'aspect-video'  },
-  { src: '/20251016_141228.jpg',   caption: 'Deluxe Room Interior',   aspect: 'aspect-[3/4]'  },
-  { src: '/20251016_142613.jpg',   caption: 'Room Details',           aspect: 'aspect-square' },
-  { src: '/20251016_142529.jpg',   caption: 'Garden Suite Terrace',   aspect: 'aspect-[4/3]'  },
-  { src: '/20251016_141102.jpg',   caption: 'Garden View',            aspect: 'aspect-[3/4]'  },
-  { src: '/20251023_135406.jpg',   caption: 'Triple Room',            aspect: 'aspect-[3/4]'  },
-  { src: '/20251016_143023.jpg',   caption: 'Outdoor Seating',        aspect: 'aspect-[4/3]'  },
-  { src: '/20251016_141206.jpg',   caption: 'Forest Walkway',         aspect: 'aspect-[3/4]'  },
-  { src: '/20251016_123549.jpg',   caption: 'Superior Room',          aspect: 'aspect-[4/3]'  },
-  { src: '/20251016_124246.jpg',   caption: 'Bathroom Details',       aspect: 'aspect-[3/4]'  },
-  { src: '/20251016_122855.jpg',   caption: 'Room Entrance',          aspect: 'aspect-square' },
-  { src: '/20251023_134530.jpg',   caption: 'King Bedroom',           aspect: 'aspect-[4/3]'  },
-  { src: '/20251016_124422.jpg',   caption: 'Window Light',           aspect: 'aspect-[4/3]'  },
-  { src: '/20251023_143021.jpg',   caption: 'Private Balcony',        aspect: 'aspect-[3/4]'  },
-  { src: '/20251016_125447.jpg',   caption: 'Lounge Area',            aspect: 'aspect-square' },
-  { src: '/20251023_143215.jpg',   caption: 'Treetop View',           aspect: 'aspect-[3/4]'  },
-  { src: '/20251023_134155.jpg',   caption: 'Morning Light',          aspect: 'aspect-[4/3]'  },
-  { src: '/20251016_144553.jpg',   caption: 'The Suite',              aspect: 'aspect-[4/3]'  },
-  { src: '/20251016_151607.jpg',   caption: 'Suite Living Area',      aspect: 'aspect-[3/4]'  },
-  { src: '/images/DSC00747.jpg',   caption: 'Poolside',               aspect: 'aspect-[4/3]'  },
-  { src: '/20251016_153610.jpg',   caption: 'Pool Deck',              aspect: 'aspect-video'  },
-  { src: '/20251016_153103.jpg',   caption: 'Suite Bathroom',         aspect: 'aspect-square' },
-  { src: '/20251016_144821.jpg',   caption: 'Suite Terrace',          aspect: 'aspect-[4/3]'  },
-  { src: '/images/DSC00568-HDR.jpg', caption: 'Nature Views',         aspect: 'aspect-video'  },
-  { src: '/20251023_141902.jpg',   caption: 'Wildlife Encounter',     aspect: 'aspect-[4/3]'  },
-  { src: '/hero2.jpeg',            caption: 'Resort Grounds',         aspect: 'aspect-[4/3]'  },
-  { src: '/about.jpeg',            caption: 'Serene Nature',          aspect: 'aspect-[3/4]'  },
-  { src: '/hero3.jpeg',            caption: 'Into the Wild',          aspect: 'aspect-[3/4]'  },
-  { src: '/20251016_153307.jpg',   caption: 'Evening Light',          aspect: 'aspect-[4/3]'  },
-  { src: '/home.jpeg',             caption: 'Resort Overview',        aspect: 'aspect-video'  },
+  // Drone
+  { src: '/images/Drone/DJI_20260504173711_0078_D_1778177363708.avif', caption: 'Aerial View',           aspect: 'aspect-video'  },
+  { src: '/images/Drone/DJI_20260504173915_0079_D_1778177359348.avif', caption: 'Resort From Above',      aspect: 'aspect-video'  },
+  { src: '/images/Drone/DJI_20260504173932_0080_D_1778177355215.avif', caption: 'Treetop Panorama',       aspect: 'aspect-video'  },
+  { src: '/images/Drone/DJI_20260504174001_0081_D_1778177350459.avif', caption: 'Jungle Canopy',          aspect: 'aspect-video'  },
+  { src: '/images/Drone/DJI_20260504174020_0082_D_1778177342387.avif', caption: 'Sigiriya Landscape',     aspect: 'aspect-video'  },
+  { src: '/images/Drone/DJI_20260504174259_0083_D_1778177332595.avif', caption: 'Into the Wild — Bird\'s Eye', aspect: 'aspect-video' },
+  { src: '/images/Drone/DJI_20260504174316_0084_D_1778177291250.avif', caption: 'Resort Grounds',         aspect: 'aspect-video'  },
+  // Pool Area
+  { src: '/images/Pool Area/DSC00739.avif',     caption: 'Poolside Morning',       aspect: 'aspect-[4/3]'  },
+  { src: '/images/Pool Area/DSC00743.avif',     caption: 'Pool Reflections',       aspect: 'aspect-[4/3]'  },
+  { src: '/images/Pool Area/DSC00746.avif',     caption: 'Open-Air Pool',          aspect: 'aspect-[4/3]'  },
+  { src: '/images/Pool Area/DSC00747.avif',     caption: 'Poolside Serenity',      aspect: 'aspect-square' },
+  { src: '/images/Pool Area/DSC00748.avif',     caption: 'Pool Deck',              aspect: 'aspect-[4/3]'  },
+  { src: '/images/Pool Area/DSC00751.avif',     caption: 'Afternoon by the Pool',  aspect: 'aspect-[3/4]'  },
+  { src: '/images/Pool Area/DSC00753.avif',     caption: 'Nature Pool',            aspect: 'aspect-[4/3]'  },
+  { src: '/images/Pool Area/DSC00755.avif',     caption: 'Pool & Greenery',        aspect: 'aspect-square' },
+  { src: '/images/Pool Area/DSC00756.avif',     caption: 'Swim in the Wild',       aspect: 'aspect-[4/3]'  },
+  { src: '/images/Pool Area/DSC00759.avif',     caption: 'Poolside Lounge',        aspect: 'aspect-[3/4]'  },
+  { src: '/images/Pool Area/DSC00763.avif',     caption: 'Evening Pool',           aspect: 'aspect-[4/3]'  },
+  { src: '/images/Pool Area/DSC00766.avif',     caption: 'Pool at Sunset',         aspect: 'aspect-[4/3]'  },
+  { src: '/images/Pool Area/DSC00769-HDR.avif', caption: 'Golden Hour Poolside',   aspect: 'aspect-[4/3]'  },
+  // Room Outside
+  { src: '/images/Room Outside/DSC00624.avif',  caption: 'Room Exterior',          aspect: 'aspect-[4/3]'  },
+  { src: '/images/Room Outside/DSC00627.avif',  caption: 'Garden Pathway',         aspect: 'aspect-[3/4]'  },
+  { src: '/images/Room Outside/DSC00630.avif',  caption: 'Nature Surrounds',       aspect: 'aspect-[4/3]'  },
+  { src: '/images/Room Outside/DSC00633.avif',  caption: 'Villa Exterior',         aspect: 'aspect-[3/4]'  },
+  { src: '/images/Room Outside/DSC00635.avif',  caption: 'Tropical Entrance',      aspect: 'aspect-square' },
+  { src: '/images/Room Outside/DSC00641.avif',  caption: 'Open Balcony',           aspect: 'aspect-[4/3]'  },
+  { src: '/images/Room Outside/DSC00642.avif',  caption: 'Outdoor Seating',        aspect: 'aspect-[3/4]'  },
+  { src: '/images/Room Outside/DSC00644.avif',  caption: 'Garden View',            aspect: 'aspect-[4/3]'  },
+  { src: '/images/Room Outside/DSC00649.avif',  caption: 'Jungle Terrace',         aspect: 'aspect-[4/3]'  },
+  { src: '/images/Room Outside/DSC00659.avif',  caption: 'Morning Surroundings',   aspect: 'aspect-[3/4]'  },
+  // Rooms — Deluxe Double Garden View
+  { src: '/images/Deluxe double room with garden view/DSC00662-HDR.avif', caption: 'Deluxe Double — Garden View', aspect: 'aspect-[4/3]' },
+  { src: '/images/Deluxe double room with garden view/DSC00671.avif',     caption: 'Room Interior',              aspect: 'aspect-[3/4]' },
+  { src: '/images/Deluxe double room with garden view/DSC00680-HDR.avif', caption: 'Garden Suite Details',       aspect: 'aspect-[4/3]' },
+  { src: '/images/Deluxe double room with garden view/DSC00700-HDR.avif', caption: 'Cosy Retreat',               aspect: 'aspect-square'},
+  // Rooms — Deluxe Family Nature View
+  { src: '/images/Deluxe family room with nature view/DSC00433-HDR.avif', caption: 'Family Room — Nature View',  aspect: 'aspect-[4/3]' },
+  { src: '/images/Deluxe family room with nature view/DSC00450-HDR.avif', caption: 'Family Room Interior',       aspect: 'aspect-[3/4]' },
+  { src: '/images/Deluxe family room with nature view/DSC00470-HDR.avif', caption: 'Nature Room Details',        aspect: 'aspect-[4/3]' },
+  // Rooms — Deluxe Triple Balcony
+  { src: '/images/Deluxe triple room with balcony/DSC00528-HDR.avif', caption: 'Triple Room — Balcony',         aspect: 'aspect-[4/3]' },
+  { src: '/images/Deluxe triple room with balcony/DSC00546-HDR.avif', caption: 'Balcony View',                   aspect: 'aspect-[3/4]' },
+  { src: '/images/Deluxe triple room with balcony/DSC00560-HDR.avif', caption: 'Triple Room Interior',           aspect: 'aspect-square'},
+  // Restaurant
+  { src: '/Reastuarent Area/Reastuarent Area/DSC00770.avif',     caption: 'Open-Air Dining',  aspect: 'aspect-[4/3]'  },
+  { src: '/Reastuarent Area/Reastuarent Area/DSC00779.avif',     caption: 'Restaurant Views', aspect: 'aspect-[3/4]'  },
+  { src: '/Reastuarent Area/Reastuarent Area/DSC00787-HDR.avif', caption: 'Dining Ambience',  aspect: 'aspect-[4/3]'  },
 ];
 
 export default function GalleryPage() {
@@ -51,9 +71,9 @@ export default function GalleryPage() {
 
       {/* Hero */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <Image src="/home.jpeg" alt="Gallery" fill className="object-cover" priority />
+        <Image src="/images/Drone/DJI_20260504173915_0079_D_1778177359348.avif" alt="Gallery" fill className="object-cover" priority />
         <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 text-center px-6">
+        <div className="relative z-10 text-center px-6 flex flex-col items-center mt-16">
           <motion.span
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
             className="text-brand uppercase tracking-[0.35em] text-sm font-semibold mb-4 block"
