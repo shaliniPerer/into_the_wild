@@ -20,7 +20,7 @@ export function Gallery() {
           <div>
              <div className="flex items-center gap-4 mb-4">
               <span className="text-[10px] tracking-[0.4em] text-[#3b3439] uppercase font-medium">Visual Journal</span>
-              <div className="w-12 h-[1px] bg-brand" />
+              <Image src="/lotus-icon.png" alt="" width={20} height={20} className="w-5 h-5" unoptimized />
             </div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}

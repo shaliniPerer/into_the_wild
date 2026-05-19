@@ -111,8 +111,8 @@ export function Testimonials() {
   return (
     <section id="testimonials" className="py-28 bg-[#faf9f7] relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-brand/4 blur-[160px] rounded-full pointer-events-none" />
-      {/* Lotus — bottom-left corner peeking */}
-      <div className="absolute -bottom-24 -left-24 pointer-events-none select-none">
+      {/* Lotus — centered, full */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
         <Image src="/images/Tranparent Favicon.png" alt="" width={420} height={420} className="opacity-[0.07]" unoptimized />
       </div>
 
@@ -125,9 +125,9 @@ export function Testimonials() {
             viewport={{ once: true }}
             className="flex items-center justify-center gap-4 mb-4"
           >
-            <div className="w-8 h-[1px] bg-brand/60" />
+            <Image src="/lotus-icon.png" alt="" width={20} height={20} className="w-5 h-5 opacity-80" unoptimized />
             <span className="text-[10px] tracking-[0.4em] uppercase text-[#3b3439] font-medium">Guest Voices</span>
-            <div className="w-8 h-[1px] bg-brand/60" />
+            <Image src="/lotus-icon.png" alt="" width={20} height={20} className="w-5 h-5 opacity-80" unoptimized />
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}

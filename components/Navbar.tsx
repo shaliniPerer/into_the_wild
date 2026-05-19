@@ -85,7 +85,7 @@ export function Navbar() {
       </motion.div>
 
       {/* Main nav row */}
-      <div className="container mx-auto px-6 md:px-12 relative flex items-center justify-center py-3 min-h-[56px] md:grid md:grid-cols-[1fr_auto_1fr] md:py-1">
+      <div className="container mx-auto px-6 md:px-12 relative flex items-center justify-center py-1.5 min-h-[44px] md:grid md:grid-cols-[1fr_auto_1fr] md:py-0.5">
 
         {/* Desktop: Left nav links */}
         <nav className="hidden md:flex items-center gap-8">
@@ -107,7 +107,7 @@ export function Navbar() {
             alt="Into The Wild Hotel — Sigiriya, Sri Lanka"
             width={200}
             height={90}
-            className="object-contain h-14 md:h-24 w-auto"
+            className="object-contain h-10 md:h-14 w-auto"
             priority
           />
         </Link>

@@ -23,7 +23,7 @@ const destinations: Destination[] = [
   {
     name: 'Sigiriya Rock Fortress',
     tags: ['HISTORY', 'CULTURE', 'ADVENTURE'],
-    image: '/hero1.avif',
+    image: '/images/Drone/DJI_20260504173915_0079_D_1778177359348.avif',
     stats: [
       { label: 'Distance', value: '~3 km' },
       { label: 'Travel Time', value: '8–10 mins' },
@@ -44,7 +44,7 @@ const destinations: Destination[] = [
   {
     name: 'Pidurangala Rock',
     tags: ['NATURE', 'VIEWS', 'SPIRITUAL'],
-    image: '/hero2.avif',
+    image: '/images/Drone/DJI_20260504173932_0080_D_1778177355215.avif',
     stats: [
       { label: 'Distance', value: '~4 km' },
       { label: 'Travel Time', value: '10–12 mins' },
@@ -65,7 +65,7 @@ const destinations: Destination[] = [
   {
     name: 'Minneriya National Park',
     tags: ['WILDLIFE', 'SAFARI', 'NATURE'],
-    image: '/20251023_141902.avif',
+    image: '/images/Drone/DJI_20260504174001_0081_D_1778177350459.avif',
     stats: [
       { label: 'Distance', value: '~24 km' },
       { label: 'Travel Time', value: '40–45 mins' },
@@ -83,7 +83,7 @@ const destinations: Destination[] = [
   {
     name: 'Dambulla Cave Temple',
     tags: ['CULTURE', 'HISTORY', 'SPIRITUAL'],
-    image: '/home.avif',
+    image: '/images/Drone/DJI_20260504174020_0082_D_1778177342387.avif',
     stats: [
       { label: 'Distance', value: '~17 km' },
       { label: 'Travel Time', value: '25–30 mins' },
@@ -103,7 +103,7 @@ const destinations: Destination[] = [
   {
     name: 'Cycling Tours Around Sigiriya',
     tags: ['ACTIVITY', 'NATURE', 'RELAXING'],
-    image: '/20251016_101353.avif',
+    image: '/images/Drone/DJI_20260504174020_0082_D_1778177469905.avif',
     stats: [
       { label: 'Distance', value: 'Near Hotel' },
       { label: 'Difficulty', value: 'Easy/Flat' },
@@ -121,7 +121,7 @@ const destinations: Destination[] = [
   {
     name: 'Sigiriya Village Safari',
     tags: ['CULTURE', 'FOOD', 'EXPERIENCE'],
-    image: '/20251016_095222.avif',
+    image: '/images/Drone/DJI_20260504174259_0083_D_1778177332595.avif',
     stats: [
       { label: 'Distance', value: '~5–7 km' },
       { label: 'Travel Time', value: '15–20 mins' },
@@ -139,7 +139,7 @@ const destinations: Destination[] = [
   {
     name: 'Nature Walks & Bird Watching',
     tags: ['NATURE', 'WILDLIFE', 'WELLNESS'],
-    image: '/about.avif',
+    image: '/images/Drone/DJI_20260504174316_0084_D_1778177291250.avif',
     stats: [
       { label: 'Distance', value: '1–3 km' },
       { label: 'Travel', value: 'Walking' },
@@ -157,7 +157,7 @@ const destinations: Destination[] = [
   {
     name: 'Traditional Cooking Experience',
     tags: ['FOOD', 'CULTURE', 'LEARNING'],
-    image: '/ayurvedic-relaxing-health-beauty-happy-blonde-woma-2026-01-05-23-13-51-utc.avif',
+    image: '/images/Food/DSC00804.avif',
     stats: [
       { label: 'Travel Time', value: '15–20 mins' },
       { label: 'Duration', value: '2–3 hours' },

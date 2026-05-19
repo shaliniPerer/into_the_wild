@@ -41,9 +41,7 @@ export default function RoomDetailPage() {
         <Image src={room.image} alt={room.name} fill className="object-cover" priority />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 text-center px-6 flex flex-col items-center mt-16">
-          <Link href="/accommodation" className="flex items-center gap-2 text-white/70 hover:text-brand transition-colors text-xs uppercase tracking-widest mb-6">
-            <ArrowLeft className="w-3.5 h-3.5" /> Back to Rooms
-          </Link>
+          
           <motion.span
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
             className="text-brand uppercase tracking-[0.35em] text-sm font-semibold mb-4 block"
@@ -67,19 +65,19 @@ export default function RoomDetailPage() {
           <div className="flex flex-wrap items-center gap-8 py-5">
             <div className="flex items-center gap-2.5">
               <BedDouble className="w-4 h-4 text-brand" />
-              <span className="text-[10px] uppercase tracking-widest text-charcoal/60 font-medium">{room.bedType}</span>
+              <span className="text-sm text-charcoal/60 font-light">{room.bedType}</span>
             </div>
             <div className="flex items-center gap-2.5">
               <Eye className="w-4 h-4 text-brand" />
-              <span className="text-[10px] uppercase tracking-widest text-charcoal/60 font-medium">{room.view}</span>
+              <span className="text-sm text-charcoal/60 font-light">{room.view}</span>
             </div>
             <div className="flex items-center gap-2.5">
               <Maximize className="w-4 h-4 text-brand" />
-              <span className="text-[10px] uppercase tracking-widest text-charcoal/60 font-medium">{room.size}</span>
+              <span className="text-sm text-charcoal/60 font-light">{room.size}</span>
             </div>
             <div className="flex items-center gap-2.5">
               <Users className="w-4 h-4 text-brand" />
-              <span className="text-[10px] uppercase tracking-widest text-charcoal/60 font-medium">Max {room.capacity} Guests</span>
+              <span className="text-sm text-charcoal/60 font-light">Max {room.capacity} Guests</span>
             </div>
           </div>
         </div>
@@ -159,10 +157,10 @@ export default function RoomDetailPage() {
 
                   <div className="flex items-center gap-2 py-3 mb-4 border-t border-b border-charcoal/10">
                     <CheckCircle className="w-3.5 h-3.5 text-brand flex-shrink-0" />
-                    <span className="text-[9px] uppercase tracking-wide text-charcoal/55 font-medium">Sri Lankan &amp; English Mix Breakfast included</span>
+                    <span className="text-sm text-charcoal/55 font-light">Sri Lankan &amp; English Mix Breakfast included</span>
                   </div>
 
-                  <p className="text-[9px] text-charcoal/35 mb-5 uppercase tracking-wide">Visa / Master Credit or Debit card Accepted</p>
+                  <p className="text-sm text-charcoal/35 mb-5 font-light">Visa / Master Credit or Debit card Accepted</p>
 
                   <a
                     href={`https://wa.me/919847000000?text=${whatsappMessage}`}
@@ -210,16 +208,17 @@ export default function RoomDetailPage() {
         <section className="bg-ivory border-t border-charcoal/10 py-14">
           <div className="max-w-6xl mx-auto px-6 md:px-12">
             <h2 className="font-serif text-2xl text-charcoal font-light mb-8">Other Rooms You May Like</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {otherRooms.map((r) => (
-                <Link key={r.id} href={`/accommodation/${r.id}`} className="group flex items-center gap-0 bg-white border border-charcoal/10 overflow-hidden hover:border-brand/30 transition-colors rounded-xl">
-                  <div className="relative w-36 h-28 flex-shrink-0 overflow-hidden">
+                <Link key={r.id} href={`/accommodation/${r.id}`} className="group bg-white border border-charcoal/10 overflow-hidden hover:border-brand/30 transition-all duration-300 rounded-2xl hover:shadow-lg">
+                  <div className="relative w-full aspect-[4/3] overflow-hidden">
                     <Image src={r.image} alt={r.name} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-500" />
                   </div>
-                  <div className="px-5 py-4">
-                    <p className="text-[9px] uppercase tracking-widest text-brand font-semibold mb-1">${r.price}/night</p>
-                    <h3 className="font-serif text-base text-charcoal font-light leading-tight mb-1">{r.name}</h3>
-                    <p className="text-[9px] uppercase tracking-wide text-charcoal/40">{r.size} &middot; {r.capacity} Person</p>
+                  <div className="p-5">
+                    <p className="text-[9px] uppercase tracking-widest text-brand font-semibold mb-1.5">${r.price}/night</p>
+                    <h3 className="font-serif text-xl text-charcoal font-light leading-tight mb-2">{r.name}</h3>
+                    <p className="text-sm text-charcoal/40 font-light">{r.size} &middot; {r.capacity} Person</p>
                   </div>
                 </Link>
               ))}

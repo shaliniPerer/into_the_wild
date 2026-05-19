@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, Suspense } from "react";
+import Image from "next/image";
 import { Canvas } from "@react-three/fiber";
 import { useTexture, OrbitControls } from "@react-three/drei";
 import { motion, useInView } from "motion/react";
@@ -44,7 +45,7 @@ export function ImmersiveExperience() {
               transition={{ duration: 0.8 }}
               className="flex items-center gap-4 mb-4"
             >
-              <div className="w-8 h-[1px] bg-brand" />
+              <Image src="/lotus-icon.png" alt="" width={20} height={20} className="w-5 h-5" unoptimized />
               <span className="text-[10px] uppercase tracking-[0.4em] text-[#3b3439] font-medium">Immersive Journey</span>
             </motion.div>
             <motion.h2

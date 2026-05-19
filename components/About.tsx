@@ -1,45 +1,20 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 import Image from "next/image";
 
-const imagePool = [
+const images = [
   "/images/Drone/DJI_20260504173711_0078_D_1778177363708.avif",
   "/images/Pool Area/DSC00756.avif",
   "/images/Room Outside/DSC00641.avif",
-  "/images/Drone/DJI_20260504174020_0082_D_1778177342387.avif",
-  "/images/Pool Area/DSC00751.avif",
-  "/images/Room Outside/DSC00630.avif",
-  "/images/Deluxe double room with garden view/DSC00662-HDR.avif",
-  "/images/Deluxe family room with nature view/DSC00433-HDR.avif",
-  "/images/Deluxe triple room with balcony/DSC00538-HDR.avif",
-  "/images/Room Outside/DSC00649.avif",
 ];
 
 export function About() {
-  const [slots, setSlots] = useState<[string, string, string]>([
-    imagePool[0], imagePool[1], imagePool[2],
-  ]);
-  const rotateRef = useRef({ nextIdx: 3, slot: 0 });
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      const { nextIdx, slot } = rotateRef.current;
-      setSlots(prev => {
-        const next = [...prev] as [string, string, string];
-        next[slot % 3] = imagePool[nextIdx % imagePool.length];
-        return next;
-      });
-      rotateRef.current = { nextIdx: nextIdx + 1, slot: slot + 1 };
-    }, 3500);
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <section id="about" className="py-24 md:py-32 bg-white overflow-hidden relative">
-      {/* Lotus — bottom-right corner peeking */}
-      <div className="absolute -bottom-16 -right-16 pointer-events-none select-none">
+      {/* Lotus — centered, full */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
         <Image src="/images/Tranparent Favicon.png" alt="" width={380} height={380} className="opacity-[0.06]" unoptimized />
       </div>
       <div className="container mx-auto px-6 md:px-12 relative z-10">
@@ -55,7 +30,7 @@ export function About() {
           >
             {/* Overline */}
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-10 h-[1px] bg-brand" />
+              <Image src="/lotus-icon.png" alt="" width={20} height={20} className="w-5 h-5" unoptimized />
               <span className="text-[10px] uppercase tracking-[0.4em] text-[#3b3439] font-medium">About Us</span>
             </div>
 
@@ -77,7 +52,7 @@ export function About() {
             </p>
           </motion.div>
 
-          {/* 3-Image overlapping cascade — auto-rotating */}
+          {/* 3-Image overlapping cascade — hover to reveal */}
           <div className="flex-1 w-full">
             <div className="relative h-[400px] md:h-[480px] w-full">
 
@@ -87,25 +62,14 @@ export function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="absolute top-0 left-[28%] right-0 h-[72%] rounded-xl overflow-hidden shadow-lg"
+                className="absolute top-0 left-[28%] right-0 h-[72%] rounded-xl overflow-hidden shadow-lg group cursor-pointer transition-[transform,z-index] duration-500 hover:scale-[1.04] hover:z-30 hover:shadow-2xl"
               >
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={slots[0]}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.9 }}
-                    className="absolute inset-0"
-                  >
-                    <Image
-                      src={slots[0]}
-                      alt="Resort landscape"
-                      fill
-                      className="object-cover"
-                    />
-                  </motion.div>
-                </AnimatePresence>
+                <Image
+                  src={images[0]}
+                  alt="Resort landscape"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
               </motion.div>
 
               {/* Image 2 — middle layer */}
@@ -114,26 +78,15 @@ export function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.9, delay: 0.28, ease: [0.16, 1, 0.3, 1] }}
-                className="absolute top-[14%] left-[14%] right-[14%] h-[72%] rounded-xl overflow-hidden z-10 border-[3px] border-white shadow-xl"
+                className="absolute top-[14%] left-[14%] right-[14%] h-[72%] rounded-xl overflow-hidden z-10 border-[3px] border-white shadow-xl group cursor-pointer transition-[transform,z-index] duration-500 hover:scale-[1.04] hover:z-30 hover:shadow-2xl"
               >
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={slots[1]}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.9 }}
-                    className="absolute inset-0"
-                  >
-                    <Image
-                      src={slots[1]}
-                      alt="Into The Wild Hotel"
-                      fill
-                      className="object-cover"
-                      priority
-                    />
-                  </motion.div>
-                </AnimatePresence>
+                <Image
+                  src={images[1]}
+                  alt="Into The Wild Hotel"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  priority
+                />
               </motion.div>
 
               {/* Image 3 — front layer, bottom-left */}
@@ -142,25 +95,14 @@ export function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.9, delay: 0.46, ease: [0.16, 1, 0.3, 1] }}
-                className="absolute top-[28%] left-0 right-[28%] h-[72%] rounded-xl overflow-hidden z-20 border-[3px] border-white shadow-2xl"
+                className="absolute top-[28%] left-0 right-[28%] h-[72%] rounded-xl overflow-hidden z-20 border-[3px] border-white shadow-2xl group cursor-pointer transition-[transform,z-index] duration-500 hover:scale-[1.04] hover:z-30"
               >
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={slots[2]}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.9 }}
-                    className="absolute inset-0"
-                  >
-                    <Image
-                      src={slots[2]}
-                      alt="Dining experience"
-                      fill
-                      className="object-cover"
-                    />
-                  </motion.div>
-                </AnimatePresence>
+                <Image
+                  src={images[2]}
+                  alt="Dining experience"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
               </motion.div>
 
             </div>

@@ -67,8 +67,8 @@ export function Services() {
     <section id="services" className="py-28 bg-white relative overflow-hidden">
       {/* subtle ambient glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-brand/5 blur-[160px] rounded-full pointer-events-none" />
-      {/* Lotus — top-left corner peeking */}
-      <div className="absolute -top-20 -left-20 pointer-events-none select-none">
+      {/* Lotus — centered, full */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
         <Image src="/images/Tranparent Favicon.png" alt="" width={360} height={360} className="opacity-[0.06]" unoptimized />
       </div>
 
@@ -82,7 +82,7 @@ export function Services() {
             transition={{ duration: 0.7 }}
             className="flex items-center gap-4 mb-4"
           >
-            <div className="w-8 h-[1px] bg-brand" />
+            <Image src="/lotus-icon.png" alt="" width={20} height={20} className="w-5 h-5" unoptimized />
             <span className="text-[10px] uppercase tracking-[0.4em] text-[#3b3439] font-medium">
               Amenities &amp; Facilities
             </span>

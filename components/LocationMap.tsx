@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Image from "next/image";
 
 export function LocationMap() {
   return (
@@ -16,9 +17,9 @@ export function LocationMap() {
             viewport={{ once: true }}
             className="flex items-center justify-center gap-4 mb-4"
           >
-            <div className="w-8 h-[1px] bg-brand/60" />
+            <Image src="/lotus-icon.png" alt="" width={20} height={20} className="w-5 h-5 opacity-80" unoptimized />
             <span className="text-[10px] tracking-[0.4em] uppercase text-[#3b3439] font-medium">Find Us</span>
-            <div className="w-8 h-[1px] bg-brand/60" />
+            <Image src="/lotus-icon.png" alt="" width={20} height={20} className="w-5 h-5 opacity-80" unoptimized />
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}

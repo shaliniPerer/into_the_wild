@@ -43,9 +43,9 @@ export function BookingCTA() {
           transition={{ duration: 0.8 }}
           className="flex items-center gap-4 mb-8"
         >
-          <div className="w-12 h-[1px] bg-brand/60" />
+          <Image src="/lotus-icon.png" alt="" width={20} height={20} className="w-5 h-5 opacity-80" unoptimized />
           <span className="text-[10px] uppercase tracking-[0.5em] text-brand font-semibold">Reserve Your Sanctuary</span>
-          <div className="w-12 h-[1px] bg-brand/60" />
+          <Image src="/lotus-icon.png" alt="" width={20} height={20} className="w-5 h-5 opacity-80" unoptimized />
         </motion.div>
 
         {/* Headline */}

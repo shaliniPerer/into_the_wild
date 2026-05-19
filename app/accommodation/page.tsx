@@ -94,15 +94,15 @@ export default function AccommodationPage() {
                     <div className="flex flex-wrap items-center gap-5 mb-5">
                       <div className="flex items-center gap-1.5">
                         <BedDouble className="w-3.5 h-3.5 text-brand" />
-                        <span className="text-[10px] uppercase tracking-widest text-charcoal/50 font-medium">{room.bedType}</span>
+                        <span className="text-sm text-charcoal/50 font-light">{room.bedType}</span>
                       </div>
                       <div className="flex items-center gap-1.5">
                         <Maximize className="w-3.5 h-3.5 text-brand" />
-                        <span className="text-[10px] uppercase tracking-widest text-charcoal/50 font-medium">{room.size}</span>
+                        <span className="text-sm text-charcoal/50 font-light">{room.size}</span>
                       </div>
                       <div className="flex items-center gap-1.5">
                         <Users className="w-3.5 h-3.5 text-brand" />
-                        <span className="text-[10px] uppercase tracking-widest text-charcoal/50 font-medium">Max {room.capacity} Person</span>
+                        <span className="text-sm text-charcoal/50 font-light">Max {room.capacity} Person</span>
                       </div>
                     </div>
 
@@ -120,7 +120,7 @@ export default function AccommodationPage() {
                       {room.amenities.map((amenity) => (
                         <div key={amenity} className="flex items-center gap-1.5 text-charcoal/60">
                           <span className="text-brand">{getAmenityIcon(amenity)}</span>
-                          <span className="text-[10px] uppercase tracking-wide font-medium">{amenity}</span>
+                          <span className="text-sm font-light">{amenity}</span>
                         </div>
                       ))}
                     </div>
@@ -129,11 +129,11 @@ export default function AccommodationPage() {
                     <div className="flex flex-wrap gap-2.5 mb-6">
                       <div className="flex items-center gap-1.5 px-3 py-1.5 bg-brand/10 border border-brand/25 rounded-lg">
                         <CheckCircle className="w-3.5 h-3.5 text-brand flex-shrink-0" />
-                        <span className="text-[9px] uppercase tracking-widest text-charcoal/65 font-semibold">Sri Lankan &amp; English Mix Breakfast included</span>
+                        <span className="text-sm text-charcoal/65 font-light">Sri Lankan &amp; English Mix Breakfast included</span>
                       </div>
                       <div className="flex items-center gap-1.5 px-3 py-1.5 bg-charcoal/5 border border-charcoal/10 rounded-lg">
                         <CheckCircle className="w-3.5 h-3.5 text-charcoal/35 flex-shrink-0" />
-                        <span className="text-[9px] uppercase tracking-widest text-charcoal/45 font-medium">Visa / Master Credit or Debit card Accepted</span>
+                        <span className="text-sm text-charcoal/45 font-light">Visa / Master Credit or Debit card Accepted</span>
                       </div>
                     </div>
                   </div>
